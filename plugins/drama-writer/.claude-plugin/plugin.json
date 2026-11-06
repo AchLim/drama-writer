@@ -1,6 +1,6 @@
 {
-  "name": "akoru",
-  "displayName": "akoru",
+  "name": "drama-writer",
+  "displayName": "Drama Writer",
   "version": "1.0.0",
   "description": "akoru's Claude Code skills. Includes drama-writer: short dramas for vertical and AI video in any language, with natural dialogue, shot lists and continuity checks.",
   "icon": "./.claude-plugin/icon.png",

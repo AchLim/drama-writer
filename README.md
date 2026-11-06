@@ -63,16 +63,16 @@ Inside Claude Code:
 
 ```text
 /plugin marketplace add AchLim/drama-writer
-/plugin install akoru@akoru
+/plugin install drama-writer@drama-writer
 ```
 
 On Claude Code 2.1.275 or later, one line does both:
 
 ```text
-/plugin install akoru --marketplace AchLim/drama-writer
+/plugin install drama-writer --marketplace AchLim/drama-writer
 ```
 
-The plugin is named `akoru`, so the skill is available as `/akoru:drama-writer`, and Claude also picks it up on its own when you ask for drama writing.
+The plugin is named `drama-writer`, so the skill is available as `/drama-writer:drama-writer`, and Claude also picks it up on its own when you ask for drama writing.
 
 ### The skills directory
 
@@ -116,7 +116,7 @@ Keep your series bible and episodes as files in the project. drama-writer reads 
 
 | Installed with | Update with |
 |---|---|
-| Plugin | `claude plugin marketplace update akoru`, then `claude plugin update akoru@akoru` |
+| Plugin | `claude plugin marketplace update drama-writer`, then `claude plugin update drama-writer@drama-writer` |
 | Skills directory | `npx skills update drama-writer` |
 | npm | `npx @akoru/drama-writer@latest update --global` (or `--project`) |
 

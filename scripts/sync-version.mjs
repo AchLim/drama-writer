@@ -6,9 +6,9 @@ const check = process.argv.includes("--check");
 const { version } = JSON.parse(readFileSync("package.json", "utf8"));
 
 const targets = [
-  ["plugins/akoru/skills/drama-writer/VERSION", () => `${version}\n`],
-  ["plugins/akoru/skills/drama-writer/SKILL.md", (s) => s.replace(/^( {2}version: )"[^"\n]*"$/m, `$1"${version}"`)],
-  ["plugins/akoru/.claude-plugin/plugin.json", (s) => s.replace(/("version": )"[^"]*"/, `$1"${version}"`)],
+  ["plugins/drama-writer/skills/drama-writer/VERSION", () => `${version}\n`],
+  ["plugins/drama-writer/skills/drama-writer/SKILL.md", (s) => s.replace(/^( {2}version: )"[^"\n]*"$/m, `$1"${version}"`)],
+  ["plugins/drama-writer/.claude-plugin/plugin.json", (s) => s.replace(/("version": )"[^"]*"/, `$1"${version}"`)],
   [".claude-plugin/marketplace.json", (s) => s.replace(/("version": )"[^"]*"/, `$1"${version}"`)],
 ];
 

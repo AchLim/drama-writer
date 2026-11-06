@@ -70,30 +70,30 @@ Use one route per scope. Two installs of the same skill give Claude two copies w
 
 ```text
 /plugin marketplace add AchLim/drama-writer
-/plugin install akoru@akoru
+/plugin install drama-writer@drama-writer
 ```
 
 Or in one step on Claude Code 2.1.275 and later:
 
 ```text
-/plugin install akoru --marketplace AchLim/drama-writer
+/plugin install drama-writer --marketplace AchLim/drama-writer
 ```
 
-The same commands work from a terminal as `claude plugin marketplace add AchLim/drama-writer` and `claude plugin install akoru@akoru`.
+The same commands work from a terminal as `claude plugin marketplace add AchLim/drama-writer` and `claude plugin install drama-writer@drama-writer`.
 
-The plugin is named `akoru` and holds the drama-writer skill, so you can call it directly as `/akoru:drama-writer`. You rarely need to: Claude loads it when you ask for drama writing.
+The plugin is named `drama-writer` and holds the drama-writer skill, so you can call it directly as `/drama-writer:drama-writer`. You rarely need to: Claude loads it when you ask for drama writing.
 
 **Update.**
 
 ```bash
-claude plugin marketplace update akoru
-claude plugin update akoru@akoru
+claude plugin marketplace update drama-writer
+claude plugin update drama-writer@drama-writer
 ```
 
 **Remove.**
 
 ```bash
-claude plugin uninstall akoru@akoru
+claude plugin uninstall drama-writer@drama-writer
 claude plugin marketplace remove akoru
 ```
 
@@ -226,7 +226,7 @@ It reads scripts in the skill's screenplay format, counts speech by language (wo
 ### What is in the skill
 
 ```
-plugins/akoru/skills/drama-writer/
+plugins/drama-writer/skills/drama-writer/
 ├── SKILL.md        workflows, language rules, craft rules, output format, file map
 ├── VERSION
 ├── references/     14 guides: storytelling, plot, characters, dialogue, languages,
@@ -255,7 +255,7 @@ plugins/akoru/skills/drama-writer/
 
 **`update` refused to run.** It found files you edited. Its message lists them. Copy what you want to keep, or run `update --force` to back up the folder and replace it.
 
-**The plugin didn't update.** Refresh the marketplace first (`claude plugin marketplace update akoru`), then update the plugin, then start a new session.
+**The plugin didn't update.** Refresh the marketplace first (`claude plugin marketplace update drama-writer`), then update the plugin, then start a new session.
 
 **The dialogue in my language sounds off.** Name the variety and the audience, and say who speaks formally to whom. If it still misses, [open an issue](https://github.com/AchLim/drama-writer/issues) with the prompt and the lines that are wrong.
 

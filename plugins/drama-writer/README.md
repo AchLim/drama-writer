@@ -1,6 +1,6 @@
-# akoru
+# Drama Writer
 
-Skills for Claude Code by akoru. This plugin currently holds one skill, **drama-writer**.
+A Claude plugin by akoru containing the **drama-writer** skill.
 
 ## drama-writer
 
@@ -15,10 +15,10 @@ drama-writer helps Claude write short dramas the way a screenwriter would. It is
 Install it in Claude Code with:
 
 ```text
-/plugin install akoru --marketplace AchLim/drama-writer
+/plugin install drama-writer --marketplace AchLim/drama-writer
 ```
 
-Claude uses the skill on its own when you ask for drama writing. You can also call it directly as `/akoru:drama-writer`.
+Claude uses the skill on its own when you ask for drama writing. You can also call it directly as `/drama-writer:drama-writer`.
 
 ## What the plugin contains
 

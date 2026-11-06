@@ -17,7 +17,7 @@
   },
   "files": [
     "dist/",
-    "plugins/akoru/skills/drama-writer/",
+    "plugins/drama-writer/skills/drama-writer/",
     "README.md",
     "CHANGELOG.md",
     "LICENSE"

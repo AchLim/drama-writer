@@ -24,7 +24,7 @@ const model = opt("model", undefined);
 const TIMEOUT_MS = 10 * 60 * 1000;
 
 const scenarios = JSON.parse(readFileSync(path.join(ROOT, "evals", "scenarios.json"), "utf8")).filter((s) => !only.length || only.includes(s.id));
-const { estimateScript } = await import(pathToFileURL(path.join(ROOT, "plugins", "akoru", "skills", "drama-writer", "scripts", "estimate-runtime.mjs")).href);
+const { estimateScript } = await import(pathToFileURL(path.join(ROOT, "plugins", "drama-writer", "skills", "drama-writer", "scripts", "estimate-runtime.mjs")).href);
 
 // --recheck <results dir>: re-score saved outputs without calling Claude again.
 const recheck = opt("recheck", undefined);

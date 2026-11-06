@@ -22,7 +22,7 @@ describe("npm package", () => {
 
   it("ships the CLI, the whole skill, and the docs", () => {
     for (const f of ["dist/cli.js", "package.json", "README.md", "CHANGELOG.md", "LICENSE"]) assert.ok(files.includes(f), f);
-    for (const f of listFiles(SKILL_SRC)) assert.ok(files.includes(`plugins/akoru/skills/drama-writer/${f}`), f);
+    for (const f of listFiles(SKILL_SRC)) assert.ok(files.includes(`plugins/drama-writer/skills/drama-writer/${f}`), f);
   });
 
   it("does not ship sources, tests, evals, or build leftovers", () => {

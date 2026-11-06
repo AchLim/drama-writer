@@ -12,9 +12,9 @@ const json = (rel: string): Record<string, any> => JSON.parse(read(rel));
 
 describe("one version everywhere", () => {
   it("VERSION, SKILL.md and both plugin manifests match package.json", () => {
-    assert.equal(read("plugins/akoru/skills/drama-writer/VERSION").trim(), PKG.version);
-    assert.equal((parseSkill(read("plugins/akoru/skills/drama-writer/SKILL.md")).data.metadata as Record<string, string>).version, PKG.version);
-    assert.equal(json("plugins/akoru/.claude-plugin/plugin.json").version, PKG.version);
+    assert.equal(read("plugins/drama-writer/skills/drama-writer/VERSION").trim(), PKG.version);
+    assert.equal((parseSkill(read("plugins/drama-writer/skills/drama-writer/SKILL.md")).data.metadata as Record<string, string>).version, PKG.version);
+    assert.equal(json("plugins/drama-writer/.claude-plugin/plugin.json").version, PKG.version);
     assert.equal(json(".claude-plugin/marketplace.json").plugins[0].version, PKG.version);
   });
 
@@ -31,14 +31,14 @@ describe("generated files", () => {
 });
 
 describe("Claude Code plugin", () => {
-  const PLUGIN_DIR = path.join(ROOT, "plugins", "akoru");
-  const plugin = json("plugins/akoru/.claude-plugin/plugin.json");
+  const PLUGIN_DIR = path.join(ROOT, "plugins", "drama-writer");
+  const plugin = json("plugins/drama-writer/.claude-plugin/plugin.json");
   const market = json(".claude-plugin/marketplace.json");
 
   it("plugin and marketplace agree on name and description", () => {
-    assert.equal(plugin.name, "akoru");
+    assert.equal(plugin.name, "drama-writer");
     assert.equal(market.plugins[0].name, plugin.name);
-    assert.equal(market.plugins[0].source, "./plugins/akoru");
+    assert.equal(market.plugins[0].source, "./plugins/drama-writer");
     assert.equal(market.plugins[0].description, plugin.description);
   });
 

@@ -17,8 +17,8 @@ Development needs Node.js 22.18 or newer, because the tests run TypeScript direc
 
 | Path | What it is |
 |---|---|
-| `plugins/akoru/` | The Claude Code plugin: its manifest, icon, README, and the skill |
-| `plugins/akoru/skills/drama-writer/` | The skill itself. Everything Claude reads. |
+| `plugins/drama-writer/` | The Claude Code plugin: its manifest, icon, README, and the skill |
+| `plugins/drama-writer/skills/drama-writer/` | The skill itself. Everything Claude reads. |
 | `.claude-plugin/marketplace.json` | The marketplace that lists the plugin |
 | `src/` | The installer CLI (TypeScript) |
 | `test/` | Automated tests (`node:test`) |
@@ -52,7 +52,7 @@ npm version minor    # new guidance, new templates, new CLI options
 npm version major    # anything that changes how existing installs behave
 ```
 
-`npm version` writes the number to `package.json`, `plugins/akoru/skills/drama-writer/VERSION`, `SKILL.md`, and both plugin manifests, and rebuilds `drama-writer.md`. Add a matching section to `CHANGELOG.md`.
+`npm version` writes the number to `package.json`, `plugins/drama-writer/skills/drama-writer/VERSION`, `SKILL.md`, and both plugin manifests, and rebuilds `drama-writer.md`. Add a matching section to `CHANGELOG.md`.
 
 ## Changing the skill
 
