@@ -1,0 +1,128 @@
+[
+  {
+    "id": "01-english-hook",
+    "title": "English short-drama opening",
+    "prompt": "I'm making a vertical family drama for YouTube Shorts in English (US). Premise: at his father's funeral, a son finds a second phone in his late father's coat, and it's still receiving messages. Write two different opening hooks (first 10-15 seconds each) for episode 1, as short screenplay excerpts, and tell me which one you'd pick.",
+    "checks": [{ "type": "skill_activated" }, { "type": "script", "script": "latin" }, { "type": "not_regex", "pattern": "As you know", "flags": "i" }],
+    "rubric": "Hooks start inside the situation, are visual and readable without sound, pose a question the premise can answer, differ in technique, and avoid fake clickbait."
+  },
+  {
+    "id": "02-indonesian-colloquial",
+    "title": "Indonesian colloquial dialogue",
+    "prompt": "Tolong tulis adegan sekitar 45 detik dalam bahasa Indonesia sehari-hari (Jakarta). Dua sahabat cewek, umur 24, nongkrong di kosan malam-malam. Salah satu baru tahu dari Instagram kalau mantannya, yang baru putus dua minggu, udah lamaran sama cewek lain. Format screenplay vertikal.",
+    "checks": [
+      { "type": "skill_activated" },
+      { "type": "regex", "pattern": "\\b(gue|gua|lo|lu|nggak|gak|udah|banget|kok|sih)\\b", "flags": "i", "min": 4 },
+      { "type": "not_regex", "pattern": "Apakah kamu baik-baik saja", "flags": "i" }
+    ],
+    "rubric": "Natural Jakarta colloquial speech between peers; particles used with purpose and not stacked; subtext (deflection before admitting the hurt); not translated-from-English; fits about 45 seconds."
+  },
+  {
+    "id": "03-mandarin-mainland",
+    "title": "Mandarin conversational drama",
+    "prompt": "写一段大约60秒的竖屏短剧场景，用中国大陆的普通话口语。情境：深夜医院走廊，母亲发现儿子三个月前就失业了，一直瞒着家里，还每个月照常给家里打钱。请用剧本格式。",
+    "checks": [
+      { "type": "skill_activated" },
+      { "type": "script", "script": "han" },
+      { "type": "not_regex", "pattern": "[們這說麼為會個來時對還沒]", "note": "Traditional-only characters should not appear in Mainland Simplified output" }
+    ],
+    "rubric": "Simplified characters, natural spoken Mainland Mandarin (pronoun dropping, particles, indirect emotion between parent and adult child), no translation-ese (我很抱歉 everywhere, explicit pronouns), believable subtext about money and face."
+  },
+  {
+    "id": "04-korean-speech-levels",
+    "title": "Korean dialogue with appropriate speech levels",
+    "prompt": "Write a 60-second scene in Korean (dialogue in Korean, you can explain in English). A junior employee (사원, 26) and her team leader (팀장, 40s, male) in an empty meeting room right after a failed client presentation. Halfway through, the team leader's younger sister, who is the same age as the junior and went to university with her, walks in. Get the speech levels right for every pair and use any shift in speech level meaningfully.",
+    "checks": [
+      { "type": "skill_activated" },
+      { "type": "script", "script": "hangul" },
+      { "type": "regex", "pattern": "팀장님", "min": 1 },
+      { "type": "regex", "pattern": "(요|니다)[.?!…]", "min": 3 },
+      { "type": "not_regex", "pattern": "당신" }
+    ],
+    "rubric": "Junior uses 해요체/합쇼체 to the team leader; team leader uses 반말 or 해요체 consistently; sister and junior (former classmates) use 반말 with each other; sister and brother use sibling register (오빠); a shift in speech level is used as a dramatic beat; no generic 당신."
+  },
+  {
+    "id": "05-three-character-confrontation",
+    "title": "Three-character confrontation",
+    "prompt": "Write a 75-90 second vertical drama scene in English: three adult siblings at their late mother's house just after the lawyer leaves. The will left the house to only one of them, the youngest, who moved away years ago. Each sibling should want something different and sound clearly different.",
+    "checks": [{ "type": "skill_activated" }, { "type": "speakers", "min": 3 }],
+    "rubric": "Each sibling has a distinct stake and voice (cover-the-names test passes); conversation is not round-robin; alliances shift; reactions of non-speakers are written; ending beat lands; fits 75-90 s."
+  },
+  {
+    "id": "06-emotional-confrontation-pauses",
+    "title": "Emotional confrontation with natural pauses",
+    "prompt": "Write a 60-second scene in English where a woman confronts her best friend, who didn't come to her father's funeral and hasn't called in three weeks. It will be voiced with ElevenLabs v3, so add performance tags only where they actually help. I want natural pauses, not melodrama.",
+    "checks": [{ "type": "skill_activated" }, { "type": "speakers", "min": 2 }, { "type": "tag_density", "max": 0.8 }],
+    "rubric": "Emotion is earned and restrained; pauses are placed where they mean something; tags are sparse, in bracket form, before the words; no named emotions ('I feel so hurt'); the friend has a real reason; ending is not a neat reconciliation unless earned."
+  },
+  {
+    "id": "07-quiet-romance-japanese",
+    "title": "Quiet romantic scene",
+    "prompt": "日本語で、45秒くらいの静かな恋愛シーンを書いてください。同じ職場の先輩と後輩、まだ告白していない二人。終電を逃した夜、駅のベンチ。セリフは少なめで。",
+    "checks": [{ "type": "skill_activated" }, { "type": "script", "script": "kana" }, { "type": "speakers", "min": 2 }],
+    "rubric": "Minimal dialogue; feeling carried by small actions and silence; junior uses polite form to senior and senior uses casual form; no direct 'あなた'; no explicit confession speech; fits 45 s."
+  },
+  {
+    "id": "08-mystery-reveal",
+    "title": "Mystery reveal",
+    "prompt": "Mystery series, English, vertical, 90 seconds per episode. For four episodes, someone has been leaving handwritten notes in a night-shift nurse's locker warning her about a patient. Write episode 5, where we find out who has been leaving the notes. Briefly list what the earlier episodes must have planted for the reveal to be fair, then write the episode.",
+    "checks": [{ "type": "skill_activated" }, { "type": "regex", "pattern": "plant|clue|planted", "flags": "i", "min": 1 }],
+    "rubric": "Reveal is surprising yet fair, supported by listed plants; it changes the meaning of earlier events; has consequences; not a character we never met; delivered visually."
+  },
+  {
+    "id": "09-revenge-spanish-mexico",
+    "title": "Revenge drama (Spanish, Mexico)",
+    "prompt": "Escribe el episodio 1 (unos 75 segundos) de un drama de venganza vertical para TikTok, en español de México. La protagonista es una mesera humillada públicamente por la dueña del restaurante, que resulta ser la nueva esposa de su exmarido.",
+    "checks": [{ "type": "skill_activated" }, { "type": "regex", "pattern": "¿", "min": 1 }, { "type": "not_regex", "pattern": "\\b(vosotros|ordenador|vale\\b)", "flags": "i" }],
+    "rubric": "Mexican Spanish (vocabulary, address forms), revenge set up with a specific wrong and patient protagonist rather than instant omnipotence; humiliation not gratuitous; ending beat sets up the revenge."
+  },
+  {
+    "id": "10-multi-episode-cliffhanger",
+    "title": "Multi-episode cliffhanger",
+    "prompt": "Vertical drama in English. Premise: a night-shift pharmacist who has never made a mistake finds her own handwriting on a prescription she never wrote. Give me a short 3-episode arc outline (one or two lines each with the ending type), then write episode 2 in full, about 75 seconds, ending on a cliffhanger that grows out of the episode.",
+    "checks": [{ "type": "skill_activated" }, { "type": "runtime", "min": 55, "max": 100 }],
+    "rubric": "Episode endings vary in type; ep 2 cliffhanger grows from its own conflict and is honest; escalation from ep 1; runtime plausible."
+  },
+  {
+    "id": "11-continuation",
+    "title": "Continuation of an established story",
+    "prompt": "The series files are in ./series (bible.md and ep03.md). Write episode 4 (60-75 seconds). Continue from exactly where episode 3 left off without contradicting anything established, and give me the updated state block after the episode.",
+    "fixtures": ["continuation"],
+    "checks": [
+      { "type": "skill_activated" },
+      { "type": "read_file", "pattern": "series/(bible|ep03)\\.md" },
+      { "type": "regex", "pattern": "MIRA", "min": 2 },
+      { "type": "regex", "pattern": "STATE AFTER EP ?0?4", "flags": "i", "min": 1 }
+    ],
+    "rubric": "Respects state: Jun doesn't know Mira has the original; Jun's right hand bandaged; the will stays hidden in the sewing tin unless moved on screen; Saturday buyer visit honoured; Auntie Sol's secret not revealed without reason; ending type differs from 'decision'; no invented prior events."
+  },
+  {
+    "id": "12-ai-video-friendly",
+    "title": "AI video-friendly scene",
+    "prompt": "Production-ready, AI-video-friendly version please: a 60-second vertical scene in English where a young father, minutes after a minor car accident at night, realises the other driver is his estranged brother. Give scene and shot IDs, durations, and continuity notes. It will be generated shot by shot with an image-to-video model.",
+    "checks": [{ "type": "skill_activated" }, { "type": "regex", "pattern": "S0?1-0?\\d", "min": 4 }],
+    "rubric": "One or two characters per shot, one main action per shot, crash shown through simple shots and aftermath rather than complex physics, consistent character descriptions, short dialogue, shot durations plausible, continuity notes present."
+  },
+  {
+    "id": "13-shot-continuity-repair",
+    "title": "Consecutive-shot continuity",
+    "prompt": "Please do a continuity pass on the shot list in ./continuity/shotlist.md and give me the corrected shot list. Keep the scene's story and twist.",
+    "fixtures": ["continuity-review"],
+    "checks": [{ "type": "skill_activated" }, { "type": "read_file", "pattern": "continuity/shotlist\\.md" }, { "type": "regex", "pattern": "S02-0\\d", "min": 6 }],
+    "rubric": "Finds and fixes: key card already in hand (02 pulls it from pocket), coat buttoned→unbuttoned unexplained, hand switch right→left→right, Lena walking to 1408 again after already being there, standing inside room while still holding handle outside/door closed. Fixes rather than only lists; twist preserved."
+  },
+  {
+    "id": "14-prop-continuity",
+    "title": "Physical prop continuity",
+    "prompt": "Write a production-ready 60-second English scene with a shot list: at a kitchen table, a wife slides an envelope of cash back to her husband, he pushes his wedding ring across next to it, and she ends up holding the ring while he takes the envelope. Coffee mugs are on the table. Track every prop and hand carefully and include a continuity ledger.",
+    "checks": [{ "type": "skill_activated" }, { "type": "regex", "pattern": "ledger|continuity", "flags": "i", "min": 1 }, { "type": "regex", "pattern": "(left|right) hand", "flags": "i", "min": 2 }],
+    "rubric": "Envelope, ring and mugs tracked across shots; every move shown; hands consistent; no prop teleports; ledger matches shots; staging generation-friendly (simple hand actions)."
+  },
+  {
+    "id": "15-dialogue-timing",
+    "title": "Dialogue timing and estimated runtime",
+    "prompt": "Write a strictly 30-second vertical scene in English (a man returns a borrowed suit to his ex's new husband) and give me its estimated runtime with a short breakdown. It must really fit 30 seconds.",
+    "checks": [{ "type": "skill_activated" }, { "type": "runtime", "min": 20, "max": 40 }],
+    "rubric": "Dialogue volume fits 30 s; estimate accounts for pauses, reactions and action, not just word count; breakdown plausible."
+  }
+]

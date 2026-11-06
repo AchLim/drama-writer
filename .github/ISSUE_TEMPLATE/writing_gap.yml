@@ -1,0 +1,43 @@
+name: Writing gap
+description: The skill wrote something weak, wrong, or unnatural.
+labels: ["writing"]
+body:
+  - type: textarea
+    id: prompt
+    attributes:
+      label: What you asked for
+      description: The prompt, or a summary of it. Include the target length and language.
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: What went wrong
+      multiple: true
+      options:
+        - Dialogue sounds unnatural or machine-written
+        - Wrong language, variety, or register
+        - Story logic, twist, or character consistency
+        - Continuity (props, positions, shots)
+        - Hard to produce with AI video tools
+        - Runtime does not fit
+        - Contradicts earlier episodes or project files
+        - Something else
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: The lines or shots that are wrong
+      description: Paste only the relevant part, and say what a better version would do.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: drama-writer version
+      description: The number in the installed skill's VERSION file.
+  - type: input
+    id: model
+    attributes:
+      label: Claude model and Claude Code version

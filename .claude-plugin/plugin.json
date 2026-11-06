@@ -1,0 +1,24 @@
+{
+  "name": "akoru",
+  "displayName": "akoru",
+  "version": "1.0.0",
+  "description": "akoru's Claude Code skills. Includes drama-writer: short dramas for vertical and AI video in any language, with natural dialogue, shot lists and continuity checks.",
+  "author": {
+    "name": "AchLim"
+  },
+  "homepage": "https://github.com/AchLim/drama-writer",
+  "repository": "https://github.com/AchLim/drama-writer",
+  "license": "MIT",
+  "keywords": [
+    "screenwriting",
+    "short-drama",
+    "vertical-video",
+    "ai-video",
+    "dialogue",
+    "multilingual",
+    "agent-skills"
+  ],
+  "skills": [
+    "./skills/"
+  ]
+}

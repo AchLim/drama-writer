@@ -1,0 +1,59 @@
+{
+  "name": "@akoru/drama-writer",
+  "version": "1.0.0",
+  "description": "Claude Code skill for writing vertical short dramas and AI-video screenplays in any language, with an installer CLI.",
+  "homepage": "https://github.com/AchLim/drama-writer#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AchLim/drama-writer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AchLim/drama-writer/issues"
+  },
+  "author": "AchLim",
+  "type": "module",
+  "bin": {
+    "drama-writer": "dist/cli.js"
+  },
+  "files": [
+    "dist/",
+    "skills/",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "node scripts/clean.mjs dist && tsc -p tsconfig.json",
+    "build:single": "node scripts/build-single-file.mjs",
+    "typecheck": "tsc -p tsconfig.test.json --noEmit",
+    "check": "node scripts/sync-version.mjs --check && node scripts/build-single-file.mjs --check",
+    "test": "npm run build && node --test --test-reporter=spec \"test/**/*.test.ts\"",
+    "zip": "npm run build && node dist/cli.js export-zip --out release",
+    "evals": "node evals/run-evals.mjs",
+    "version": "node scripts/sync-version.mjs && node scripts/build-single-file.mjs && git add skills/drama-writer .claude-plugin drama-writer.md",
+    "prepublishOnly": "npm run check && npm run typecheck && npm test"
+  },
+  "keywords": [
+    "claude",
+    "claude-code",
+    "agent-skills",
+    "skill",
+    "screenwriting",
+    "short-drama",
+    "screenplay",
+    "ai-video",
+    "dialogue",
+    "multilingual"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.17"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.9.0"
+  }
+}
