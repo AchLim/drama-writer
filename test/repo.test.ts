@@ -48,6 +48,16 @@ describe("Claude Code plugin", () => {
     assert.equal(path.join(dir, "drama-writer"), SKILL_SRC);
   });
 
+  it("the icon is a square PNG of 512 to 2048 px under 2 MB, as the plugin directory requires", () => {
+    const png = readFileSync(path.join(ROOT, plugin.icon));
+    assert.equal(png.subarray(1, 4).toString("latin1"), "PNG");
+    const width = png.readUInt32BE(16);
+    const height = png.readUInt32BE(20);
+    assert.equal(width, height);
+    assert.ok(width >= 512 && width <= 2048, String(width));
+    assert.ok(png.length < 2 * 1024 * 1024);
+  });
+
   it("local agent tooling is kept out of git, so installs from the repo carry only this skill", () => {
     const ignore = read(".gitignore");
     for (const entry of [".agents/", ".claude/", "skills-lock.json"]) assert.ok(ignore.includes(entry), entry);

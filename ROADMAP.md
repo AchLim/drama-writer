@@ -27,7 +27,6 @@ These are candidates, not promises. Issues and pull requests can change the orde
 - **Repeated eval runs.** Several runs per scenario, so the review can talk about consistency, not just one sample.
 - **More examples.** A full continuation episode, a three-language localization of one scene, and a review of a weak script with its rewrite.
 - **Other agents.** Plugin manifests for agents beyond Claude Code, once the Claude Code version has settled.
-- **A plugin icon**, for listing in plugin directories.
 
 ## Not in scope
 

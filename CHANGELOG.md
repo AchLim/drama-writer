@@ -15,6 +15,7 @@ All notable changes to this project are documented here. The project follows [Se
 - Claude.ai ZIP export.
 - Claude Code plugin and marketplace manifests (`.claude-plugin/`), so the skill installs with `/plugin install akoru@akoru` and runs as `/akoru:drama-writer`.
 - Install from the repository with `npx skills add AchLim/drama-writer`.
+- Plugin icon: a lowercase "a" lettermark, ink on warm paper (`.claude-plugin/icon.png`, source in `assets/akoru-icon.svg`).
 - `VERSION` file in the skill folder; `npm version` keeps it, `SKILL.md` and both plugin manifests in step.
 - `drama-writer.md`, a single-file edition generated from `SKILL.md`.
 - User guide, contributing guide, code of conduct, security policy, roadmap, issue and pull request templates, and CI on Linux, macOS and Windows.
