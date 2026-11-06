@@ -38,7 +38,7 @@ describe("Claude Code plugin", () => {
   it("plugin and marketplace agree on name and description", () => {
     assert.equal(plugin.name, "drama-writer");
     assert.equal(market.plugins[0].name, plugin.name);
-    assert.equal(market.plugins[0].source, "./plugins/drama-writer");
+    assert.equal(market.plugins[0].source, "./directory-plugin");
     assert.equal(market.plugins[0].description, plugin.description);
   });
 
