@@ -2,6 +2,11 @@
 
 All notable changes to this project are documented here. The project follows [Semantic Versioning](https://semver.org/).
 
+## [1.0.1] - 2026-11-07
+
+### Changed
+- Rename the Claude plugin and marketplace to `drama-writer` and align the plugin folder and installation instructions.
+
 ## [1.0.0] - 2026-11-07
 
 ### Added
