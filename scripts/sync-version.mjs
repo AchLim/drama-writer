@@ -14,7 +14,8 @@ const targets = [
 
 let stale = 0;
 for (const [file, update] of targets) {
-  const before = readFileSync(file, "utf8");
+  // Compare without CRLF so a Windows checkout doesn't count as out of date.
+  const before = readFileSync(file, "utf8").replace(/\r\n/g, "\n");
   const after = update(before);
   if (before === after) continue;
   stale++;
