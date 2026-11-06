@@ -226,7 +226,7 @@ It reads scripts in the skill's screenplay format, counts speech by language (wo
 ### What is in the skill
 
 ```
-skills/drama-writer/
+plugins/akoru/skills/drama-writer/
 ├── SKILL.md        workflows, language rules, craft rules, output format, file map
 ├── VERSION
 ├── references/     14 guides: storytelling, plot, characters, dialogue, languages,

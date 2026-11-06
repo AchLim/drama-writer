@@ -8,7 +8,7 @@ export const SKILL_NAME = "drama-writer";
 /** Package root: one level above `dist/` (built) or `src/` (running from source). */
 export const PACKAGE_ROOT = fileURLToPath(new URL("..", import.meta.url));
 
-export const SKILL_SOURCE_DIR = path.join(PACKAGE_ROOT, "skills", SKILL_NAME);
+export const SKILL_SOURCE_DIR = path.join(PACKAGE_ROOT, "plugins", "akoru", "skills", SKILL_NAME);
 
 export interface PackageInfo {
   name: string;

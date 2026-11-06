@@ -6,7 +6,7 @@ import { fileURLToPath } from "node:url";
 
 export const ROOT = fileURLToPath(new URL("..", import.meta.url));
 export const CLI = path.join(ROOT, "dist", "cli.js");
-export const SKILL_SRC = path.join(ROOT, "skills", "drama-writer");
+export const SKILL_SRC = path.join(ROOT, "plugins", "akoru", "skills", "drama-writer");
 export const PKG = JSON.parse(readFileSync(path.join(ROOT, "package.json"), "utf8")) as { name: string; version: string };
 
 export function tmpDir(prefix = "dw-test-"): string {

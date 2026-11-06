@@ -7,7 +7,7 @@
   "plugins": [
     {
       "name": "akoru",
-      "source": "./",
+      "source": "./plugins/akoru",
       "version": "1.0.0",
       "description": "akoru's Claude Code skills. Includes drama-writer: short dramas for vertical and AI video in any language, with natural dialogue, shot lists and continuity checks."
     }

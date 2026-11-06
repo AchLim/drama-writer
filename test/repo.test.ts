@@ -12,9 +12,9 @@ const json = (rel: string): Record<string, any> => JSON.parse(read(rel));
 
 describe("one version everywhere", () => {
   it("VERSION, SKILL.md and both plugin manifests match package.json", () => {
-    assert.equal(read("skills/drama-writer/VERSION").trim(), PKG.version);
-    assert.equal((parseSkill(read("skills/drama-writer/SKILL.md")).data.metadata as Record<string, string>).version, PKG.version);
-    assert.equal(json(".claude-plugin/plugin.json").version, PKG.version);
+    assert.equal(read("plugins/akoru/skills/drama-writer/VERSION").trim(), PKG.version);
+    assert.equal((parseSkill(read("plugins/akoru/skills/drama-writer/SKILL.md")).data.metadata as Record<string, string>).version, PKG.version);
+    assert.equal(json("plugins/akoru/.claude-plugin/plugin.json").version, PKG.version);
     assert.equal(json(".claude-plugin/marketplace.json").plugins[0].version, PKG.version);
   });
 
@@ -31,25 +31,26 @@ describe("generated files", () => {
 });
 
 describe("Claude Code plugin", () => {
-  const plugin = json(".claude-plugin/plugin.json");
+  const PLUGIN_DIR = path.join(ROOT, "plugins", "akoru");
+  const plugin = json("plugins/akoru/.claude-plugin/plugin.json");
   const market = json(".claude-plugin/marketplace.json");
 
   it("plugin and marketplace agree on name and description", () => {
     assert.equal(plugin.name, "akoru");
     assert.equal(market.plugins[0].name, plugin.name);
-    assert.equal(market.plugins[0].source, "./");
+    assert.equal(market.plugins[0].source, "./plugins/akoru");
     assert.equal(market.plugins[0].description, plugin.description);
   });
 
   it("the plugin's skills path holds exactly the drama-writer skill", () => {
-    const dir = path.join(ROOT, plugin.skills[0]);
+    const dir = path.join(PLUGIN_DIR, plugin.skills[0]);
     const skills = readdirSync(dir).filter((d) => existsSync(path.join(dir, d, "SKILL.md")));
     assert.deepEqual(skills, ["drama-writer"]);
     assert.equal(path.join(dir, "drama-writer"), SKILL_SRC);
   });
 
   it("the icon is a square PNG of 512 to 2048 px under 2 MB, as the plugin directory requires", () => {
-    const png = readFileSync(path.join(ROOT, plugin.icon));
+    const png = readFileSync(path.join(PLUGIN_DIR, plugin.icon));
     assert.equal(png.subarray(1, 4).toString("latin1"), "PNG");
     const width = png.readUInt32BE(16);
     const height = png.readUInt32BE(20);
