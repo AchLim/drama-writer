@@ -95,3 +95,7 @@ Use the issue templates: **Writing gap** for weak output, **Bug** for the CLI or
 ## Conduct
 
 Everyone taking part follows the [Code of Conduct](CODE_OF_CONDUCT.md).
+
+## Directory plugin
+
+`plugins/drama-writer/` is the source of truth. After editing it, run `npm run build:directory` to regenerate `directory-plugin/`, which excludes file types restricted by the Claude directory. Commit the generated files with the source changes. `npm run check` detects stale output.

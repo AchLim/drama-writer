@@ -26,12 +26,13 @@
     "build": "node scripts/clean.mjs dist && tsc -p tsconfig.json",
     "build:single": "node scripts/build-single-file.mjs",
     "typecheck": "tsc -p tsconfig.test.json --noEmit",
-    "check": "node scripts/sync-version.mjs --check && node scripts/build-single-file.mjs --check",
+    "check": "node scripts/sync-version.mjs --check && node scripts/build-single-file.mjs --check && node scripts/build-directory-plugin.mjs --check",
     "test": "npm run build && node --test --test-reporter=spec \"test/**/*.test.ts\"",
     "zip": "npm run build && node dist/cli.js export-zip --out release",
     "evals": "node evals/run-evals.mjs",
-    "version": "node scripts/sync-version.mjs && node scripts/build-single-file.mjs && git add plugins directory-plugin .claude-plugin drama-writer.md",
-    "prepublishOnly": "npm run check && npm run typecheck && npm test"
+    "version": "node scripts/sync-version.mjs && node scripts/build-single-file.mjs && node scripts/build-directory-plugin.mjs && git add plugins directory-plugin .claude-plugin drama-writer.md",
+    "prepublishOnly": "npm run check && npm run typecheck && npm test",
+    "build:directory": "node scripts/build-directory-plugin.mjs"
   },
   "keywords": [
     "claude",
