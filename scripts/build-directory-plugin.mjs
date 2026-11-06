@@ -18,7 +18,7 @@ function edit(name, transform) {
   files.set(name, Buffer.from(updated));
 }
 collect(source);
-files.set('README.md', Buffer.from('# Drama Writer\n\nA skill by akoru for writing and reviewing short dramas, screenplays, and production-ready shot lists. Runtime estimates use the included guidance.\n'));
+edit('README.md', s => s.replace("Only the skill: Markdown guidance, templates, worked examples, and one optional script that estimates a screenplay's runtime from a file you give it.", 'The plugin contains Markdown guidance, templates, and worked examples. It estimates runtime using the included timing guidance. No separate setup or account is required.'));
 const skill = 'skills/drama-writer/';
 edit(skill + 'SKILL.md', s => s.replace(/Do not estimate runtime from word count alone\.[\s\S]*?(?=\n\n## 7\.)/, 'Do not estimate runtime from word count alone. Budget spoken time by language and delivery, then add reactions, pauses, physical action, and transitions (`references/runtime-timing.md`). Treat the result as a manual estimate. When a script runs long, cut lines that repeat meaning before cutting silences that carry emotion.'));
 edit(skill + 'references/runtime-timing.md', s => s.replace(/## 6\. Using the estimator script[\s\S]*?## 7\. Cutting to fit/, '## 6. Cutting to fit'));
