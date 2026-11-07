@@ -67,6 +67,14 @@ Every beat must do at least one job:
 - Confusion about who is who or where we are.
 - A hook that the episode abandons.
 
+**Overlapping loops.** Open the next question before you close the current one. If the episode's first question is answered at second 40 and nothing new is open, the viewer is free to leave at second 41. Hand off: the answer itself raises the next problem ("Yes, he signed it. On the day she was in hospital.").
+
+**Re-hooks.** Viewers drop off at predictable points: after the hook pays out, in the middle, and just before the end. Put a small jolt at each one: a new fact, an arrival, a changed tactic, a line that lands harder than expected. In a 60–90 s episode that usually means something sharp around 25–35 s and again around 55–65 s. These are not extra twists; they are the escalation beats the episode already has, placed where attention dips.
+
+**Partial payoffs.** Give the viewer some of what they want in every episode, never all of it. The villain is embarrassed but not exposed; the couple almost touch hands; the heroine finds one page of the contract. Satisfaction keeps viewers trusting the series; withholding the full payoff keeps them watching it.
+
+**Cut on the inhale.** End at the moment of highest tension, just before the answer: the door opening, the phone ringing a second time, the character drawing breath to speak. Cutting after the reaction gives the viewer closure and permission to stop. Cutting before it makes the next episode the only relief. This is different from a fake cliffhanger: the next episode must pick up from that exact moment and pay it honestly.
+
 ## 5. Pacing without losing feeling
 
 Fast is not the same as good. The audience needs time to:
@@ -104,8 +112,8 @@ Cliffhangers must:
 
 When writing an episode, provide (briefly, then the script):
 1. **Episode objective**: the episode's dramatic question and what changes by the end.
-2. **Opening hook**: the first image and line.
-3. **Beat progression**: a numbered list of 4–8 beats with approximate timecodes.
+2. **Opening hook**: the first image and line, and the viewer's want it feeds (see `storytelling.md` §5).
+3. **Beat progression**: a numbered list of 4–8 beats with approximate timecodes. Mark the re-hook beats and the beat where the next question opens.
 4. **Screenplay** in the template format, with dialogue.
 5. **Ending beat**: name its type.
 6. **Estimated runtime** (if a runtime was specified, or the user cares).
@@ -122,3 +130,6 @@ Skip any element the user said they don't want.
 - Episodes so dense with dialogue they cannot fit their runtime.
 - Plot logic sacrificed for shock (the twist contradicts episode 3).
 - No breathing room: every second is a scream.
+- The episode answers its question and then keeps going, with nothing new open.
+- The ending holds on the reaction until the tension is gone, so the viewer has no reason to tap "next".
+- Curiosity only: the viewer wonders what happens but doesn't care who it happens to.
