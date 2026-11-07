@@ -13,9 +13,9 @@ Quality beats compliance. Every structure in this skill is a tool, not a quota. 
 
 | Request looks like | Workflow | Deliver | Load |
 |---|---|---|---|
-| A loose idea, "give me concepts" | A. Concept | 1–3 sharp concepts: premise, genre, core conflict, leads, dramatic question, hook, direction | `references/storytelling.md` |
-| An approved concept, "develop it", "plan the series" | B. Story development | Synopsis, character profiles, structure, plot points, reveals plan, ending direction, episode breakdown, series bible | `references/plot-structure.md`, `references/character-development.md`, `templates/series-bible.md`, `templates/story-outline.md`, `templates/character-profile.md` |
-| "Write episode N", "write the scene" | C. Episode writing | Episode objective, hook, beat progression, screenplay with dialogue, ending beat | `references/short-form-drama.md`, `references/natural-dialogue.md`, `references/scene-construction.md`, `templates/episode-outline.md`, `templates/screenplay.md` |
+| A loose idea, "give me concepts" | A. Concept | 1–3 sharp concepts: premise, genre, core conflict, leads, dramatic question, hook and its engine, the viewer's want, direction | `references/storytelling.md` |
+| An approved concept, "develop it", "plan the series" | B. Story development | Synopsis, character profiles, structure, plot points, reveals plan, payoff ladder, ending direction, episode breakdown, series bible | `references/plot-structure.md`, `references/character-development.md`, `templates/series-bible.md`, `templates/story-outline.md`, `templates/character-profile.md` |
+| "Write episode N", "write the scene" | C. Episode writing | Episode objective, hook, beat progression, screenplay with dialogue, ending beat | `references/short-form-drama.md`, `references/natural-dialogue.md`, `references/scene-construction.md`, `templates/episode-outline.md`, `templates/screenplay.md`; add `references/emotional-performance.md` when the script will be voiced |
 | "Make it production-ready", shot list, prompts for AI video, TTS | D. Production screenplay | Scene IDs, shot IDs (if asked), location, time, cast present, visual action, dialogue, optional performance tags, continuity notes | `references/visual-storytelling.md`, `references/shot-continuity.md`, `references/ai-video-production.md`, `references/emotional-performance.md`, `templates/screenplay.md`, `templates/continuity-ledger.md` |
 | "Review / fix / punch up this" | E. Editorial review | Diagnosis ranked by impact, then the corrected text | `references/editorial-review.md` plus whichever craft files the problems touch |
 | "Continue", "next episode", existing project files | F. Continuation | New material that contradicts nothing established | `references/episode-continuity.md` first, then as for C or D |
@@ -47,7 +47,7 @@ These are ceilings, not targets. Silence, reactions and action take screen time 
 
 **Premise.** A premise names who, what they want, what blocks them, what it costs to fail, and the specific mechanism that makes this situation unlike the generic version. "A woman discovers her husband's secret" is a category. "A bridal-shop seamstress realises the wedding dress she is altering is for her own husband's second wedding, next Saturday" is a premise. See `references/storytelling.md`.
 
-**Hook.** The first 2–3 seconds must create a question the story actually answers. Start inside the situation, not before it. No hook may promise something the episode does not deliver.
+**Hook.** The first 2–3 seconds must create a question the story actually answers. Start inside the situation, not before it. No hook may promise something the episode does not deliver. Curiosity alone holds a viewer for one episode; what makes them binge is wanting something to happen (to see the liar caught, the secret said aloud). Draft several hooks, test them, and stack curiosity with anticipation or desire. Open the next question before closing the current one, and end on the inhale, just before the answer. See `references/storytelling.md` §5, `references/short-form-drama.md` §4, and `examples/binge-hooks.md`.
 
 **Every beat earns its place.** Each beat advances plot, reveals character, raises tension, reveals information, lands an emotion, plants a needed visual, or pays something off. Cut beats that do none of these. Keep the quiet beat that lets an important moment land; pacing is not the same as speed.
 
@@ -75,6 +75,8 @@ Use the format in `templates/screenplay.md` unless the user or project has its o
 - With several characters in a scene, list who is present under the heading, and make every speaker unambiguous.
 
 **Performance tags and TTS.** Square-bracket tags such as `[sighs]`, `[whispers]`, `[pause]` are optional. There is no minimum. Use one only when it changes how the line is performed. When the user names a TTS provider, use that provider's documented syntax; providers differ, and some use SSML or a separate instruction field instead of inline tags. If you are unsure of the exact current syntax, say so and keep tags provider-neutral. See `references/emotional-performance.md`.
+
+**Writing for the voice.** When the script will be voiced (TTS or actors), the text is the performance score. Give each charged line a surface and an underneath, and decide where the underneath leaks (one word, one breath, a restart). Shape delivery with false starts, repetition, sentence length and punctuation. Vary intensity line by line and keep speakers in contrast. Let a listener's reaction be heard when it matters. Add a delivery sheet after the script for the lines that carry the scene, then convert it to the user's provider. See `references/emotional-performance.md` §6 and `examples/voice-delivery.md`.
 
 ## 4. Production-ready screenplays (Workflow D)
 
@@ -132,4 +134,13 @@ Cast: <NAME>
 <...>
 
 **Ending beat:** <type: reveal / decision / threat / emotional landing / reversal / reframing line / arrival>
+
+---
+
+**Delivery sheet** (only when the script will be voiced; the lines that carry the scene, not every line)
+| Line | Surface | Underneath | Intensity (1-5) | Pace / volume | Leak or shift |
+|---|---|---|---|---|---|
+| <NAME>: "<line>" | | | | | |
 ```
+
+The delivery sheet sits after the `---` rule so it stays out of the spoken text and out of the runtime estimate. See `references/emotional-performance.md` §6 for how to fill it and convert it to a TTS provider's format.

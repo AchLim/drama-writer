@@ -7,7 +7,7 @@
 4. Reversals
 5. Reveals and twists
 6. Setups and payoffs
-7. Endings and cliffhangers
+7. Endings, cliffhangers and the payoff ladder
 8. Story development deliverables (Workflow B)
 9. Structural failure patterns
 
@@ -120,6 +120,17 @@ Do not reverse every scene. A string of reversals with no consequences becomes n
 - No fake cliffhangers (the gunshot that turns out to be a car backfiring, every time).
 - Rotate types. Five "a stranger appears in the doorway" endings in a row is a pattern the audience will see.
 
+**The payoff ladder (series).** A binge series is a promise paid in instalments. List the viewer's big wants (see `storytelling.md` §5), then plan how each one is paid across the series:
+
+| Want | Small payoff | Bigger payoff | Full payoff |
+|---|---|---|---|
+| See the husband exposed | Ep 4: his mother notices the second phone | Ep 11: the wife finds the apartment lease | Ep 22: exposed at his own promotion dinner |
+
+- Pay something every episode, even if it is small: a win, a look, a door closing on the villain.
+- Before a full payoff, raise the price of it: the closer the exposure, the more the protagonist has to lose by making it.
+- After a full payoff, open a bigger want straight away (the exposure reveals someone worse). A series with no unpaid want left ends there, whatever the episode count says.
+- On short-drama apps with a paywall, the episode just before it should end on the series' strongest anticipation so far, built from what came before, not a stunt invented for the moment.
+
 **Resolution.** A series ending must answer the central question, show the cost, and show who the characters are now. Avoid the generic inspirational close ("and she learned that true strength comes from within"). Prefer a concrete image that proves the change.
 
 ## 8. Story development deliverables (Workflow B)
@@ -132,8 +143,9 @@ Given an approved concept, deliver:
 4. **Major plot points**: inciting incident, first commitment, midpoint reversal, darkest point, climax, resolution.
 5. **Reveals plan**: each twist with plant, clues, misdirection, payoff episode.
 6. **Ending direction**: how it ends, what it costs, what image closes it.
-7. **Episode breakdown**: one or two lines per episode stating the episode question, the key turn, and the ending beat type (to keep variety visible).
-8. **Series bible** (`templates/series-bible.md`) if the project will run many episodes.
+7. **Payoff ladder**: the viewer's two or three big wants and the episodes where each is paid in part and in full (§7).
+8. **Episode breakdown**: one or two lines per episode stating the episode question, the key turn, the payoff given, and the ending beat type (to keep variety visible).
+9. **Series bible** (`templates/series-bible.md`) if the project will run many episodes.
 
 ## 9. Structural failure patterns
 
