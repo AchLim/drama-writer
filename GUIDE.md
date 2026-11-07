@@ -236,7 +236,7 @@ plugins/drama-writer/skills/drama-writer/
 ├── templates/      series bible, character profile, story outline, episode outline,
 │                   screenplay, continuity ledger
 ├── examples/       dialogue in six languages, weak vs strong storytelling,
-│                   a full production episode
+│                   binge hooks, voice delivery, a full production episode
 └── scripts/        estimate-runtime.mjs
 ```
 
