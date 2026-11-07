@@ -82,6 +82,8 @@ Use the format in `templates/screenplay.md` unless the user or project has its o
 
 **Performance tags and TTS.** Square-bracket tags such as `[sighs]`, `[whispers]`, `[pause]` are optional. There is no minimum. Use one only when it changes how the line is performed. When the user names a TTS provider, use that provider's documented syntax; providers differ, and some use SSML or a separate instruction field instead of inline tags. If you are unsure of the exact current syntax, say so and keep tags provider-neutral. See `references/emotional-performance.md`.
 
+**Writing for the voice.** When the script will be voiced (TTS or actors), the text is the performance score. Give each charged line a surface and an underneath, and decide where the underneath leaks (one word, one breath, a restart). Shape delivery with false starts, repetition, sentence length and punctuation. Vary intensity line by line and keep speakers in contrast. Let a listener's reaction be heard when it matters. Add a delivery sheet after the script for the lines that carry the scene, then convert it to the user's provider. See `references/emotional-performance.md` §6 and `examples/voice-delivery.md`.
+
 ## 4. Production-ready screenplays (Workflow D)
 
 Production mode adds IDs, precise staging, and continuity; it never adds padding.
@@ -128,4 +130,4 @@ Load only what the current task needs.
 - `references/runtime-timing.md`: speech rates by language, delivery modifiers, runtime budgeting.
 - `references/editorial-review.md`: the full self-review and the review/rewrite workflow.
 - `templates/`: series bible, character profile, story outline, episode outline, screenplay, continuity ledger.
-- `examples/`: natural dialogue across languages, weak vs strong storytelling, hooks and ending cuts with a payoff ladder, a full production-ready episode.
+- `examples/`: natural dialogue across languages, weak vs strong storytelling, hooks and ending cuts with a payoff ladder, flat vs performed voice delivery, a full production-ready episode.
