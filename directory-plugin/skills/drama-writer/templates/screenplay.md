@@ -40,7 +40,16 @@ Cast: <NAME>
 <...>
 
 **Ending beat:** <type: reveal / decision / threat / emotional landing / reversal / reframing line / arrival>
+
+---
+
+**Delivery sheet** (only when the script will be voiced; the lines that carry the scene, not every line)
+| Line | Surface | Underneath | Intensity (1-5) | Pace / volume | Leak or shift |
+|---|---|---|---|---|---|
+| <NAME>: "<line>" | | | | | |
 ```
+
+The delivery sheet sits after the `---` rule so it stays out of the spoken text and out of the runtime estimate. See `references/emotional-performance.md` §6 for how to fill it and convert it to a TTS provider's format.
 
 ---
 

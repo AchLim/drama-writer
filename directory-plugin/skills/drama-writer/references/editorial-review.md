@@ -19,6 +19,8 @@ Two uses:
 - Is the premise interesting and specific, with a clear mechanism?
 - Is the central conflict understandable within the first seconds?
 - Does the hook work, and does the story deliver on it?
+- Does the hook pass the scroll, sound-off and specificity tests (`storytelling.md` §5)? Which engine does it run on: curiosity, anticipation, desire?
+- Can you finish the line "By now the viewer wants ___"? Does the episode pay part of it?
 - Does the story progress logically; does each beat cause the next?
 - Are the stakes meaningful, personal, and visible?
 - Are the characters' choices driving events (not coincidence)?
@@ -36,6 +38,13 @@ Two uses:
 - Does the dialogue fit the runtime?
 - Are tags and parentheticals useful and sparse?
 - For TTS: are speaker names consistent, tags separable from spoken text, provider syntax correct?
+
+**Voice pass (scripts that will be voiced).** Read each charged line aloud at speed.
+- Does it have a surface and an underneath, and a single place where the underneath leaks?
+- Does intensity move across the scene, and do the speakers contrast?
+- Would the line sound the same said by a flat voice? If yes, put the performance in the words (restart, repetition, length, punctuation) before adding a tag.
+- Is any reaction that matters audible?
+- Does a delivery sheet cover the lines that carry the scene?
 
 ## 3. Character review
 - Does each important character want something specific in each scene?
@@ -58,6 +67,8 @@ Two uses:
 - Is there a held beat after the key reveal?
 - Does the episode start late and end early?
 - Is the turn placed to allow its consequence to be felt?
+- Is a new question open before the current one closes? Is there a re-hook where attention dips?
+- Does the ending cut on the inhale, or hold until the tension is gone?
 
 ## 6. Production review
 - Can every action be shown?

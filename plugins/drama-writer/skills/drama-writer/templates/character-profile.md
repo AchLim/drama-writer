@@ -36,6 +36,14 @@
 - **What they avoid saying:**
 - **Sample lines:** <two or three lines only this character would say>
 
+## Vocal profile (when the script will be voiced)
+- **Baseline:** <pitch, pace, texture: e.g. low, unhurried, slightly hoarse>
+- **Under pressure the voice:** <speeds up / goes flat and quiet / gets louder and more formal / laughs>
+- **Where it breaks:** <the topic or word that makes the voice catch>
+- **Non-verbal habits:** <one at most: a short laugh before bad news, a sigh before agreeing>
+- **Contrast with:** <the character they share most scenes with, and how their voices differ>
+- **Voice note for casting or TTS voice choice:** <one plain sentence, provider-neutral>
+
 ## Relationships
 | With | History | How they speak to them | Current state |
 |---|---|---|---|

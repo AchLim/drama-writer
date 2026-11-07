@@ -124,5 +124,19 @@
     "prompt": "Write a strictly 30-second vertical scene in English (a man returns a borrowed suit to his ex's new husband) and give me its estimated runtime with a short breakdown. It must really fit 30 seconds.",
     "checks": [{ "type": "skill_activated" }, { "type": "runtime", "min": 20, "max": 40 }],
     "rubric": "Dialogue volume fits 30 s; estimate accounts for pauses, reactions and action, not just word count; breakdown plausible."
+  },
+  {
+    "id": "16-binge-series-opener",
+    "title": "Series opener built to be binged",
+    "prompt": "Vertical revenge-romance for a short-drama app, English (US), 80-90 episodes of about 75 seconds. Premise: a hotel night manager discovers the VIP guest checking into the honeymoon suite is the man who left her at the altar, and his bride is her new boss. Write episode 1 in full. Before the script, tell me which hook you chose out of the ones you considered and why, and what the viewer should be aching to see by episode 3.",
+    "checks": [{ "type": "skill_activated" }, { "type": "runtime", "min": 55, "max": 100 }, { "type": "regex", "pattern": "curiosity|anticipation|desire|viewer (wants|should)", "flags": "i", "min": 1 }],
+    "rubric": "Several hooks were considered and the choice is reasoned; the first frame is visual and readable with sound off; the hook stacks curiosity with anticipation or desire; a new question opens before the first one closes; a re-hook lands near the middle; the episode pays part of the viewer's want without the full payoff; the ending cuts before the answer, not after the reaction; no slap or public-humiliation opener."
+  },
+  {
+    "id": "17-voiced-performance",
+    "title": "Delivery built into the text for TTS",
+    "prompt": "Write a 45-second scene in English: a grown son calls his mother to tell her he is not coming home for her 70th birthday, and she pretends it is fine. It will be fully voiced with an AI voice, so I want the delivery to sound human, not read. Give me the script and anything the voice needs.",
+    "checks": [{ "type": "skill_activated" }, { "type": "speakers", "min": 2 }, { "type": "tag_density", "max": 0.6 }, { "type": "regex", "pattern": "surface|underneath|intensity|delivery", "flags": "i", "min": 1 }],
+    "rubric": "Each charged line has a surface and an underneath with one clear leak; delivery is carried by the words (false starts, restarts, repetition, line length, punctuation) more than by tags; intensity moves and the two speakers contrast; the mother's pretending is audible but never named; at least one listener reaction is written where it matters; a delivery sheet covers the key lines and stays provider-neutral or uses only syntax the model says it is sure of."
   }
 ]
