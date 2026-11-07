@@ -53,7 +53,7 @@ These are ceilings, not targets. Silence, reactions and action take screen time 
 
 **Premise.** A premise names who, what they want, what blocks them, what it costs to fail, and the specific mechanism that makes this situation unlike the generic version. "A woman discovers her husband's secret" is a category. "A bridal-shop seamstress realises the wedding dress she is altering is for her own husband's second wedding, next Saturday" is a premise. See `references/storytelling.md`.
 
-**Hook.** The first 2–3 seconds must create a question the story actually answers. Start inside the situation, not before it. No hook may promise something the episode does not deliver.
+**Hook.** The first 2–3 seconds must create a question the story actually answers. Start inside the situation, not before it. No hook may promise something the episode does not deliver. Curiosity alone holds a viewer for one episode; what makes them binge is wanting something to happen (to see the liar caught, the secret said aloud). Draft several hooks, test them, and stack curiosity with anticipation or desire. Open the next question before closing the current one, and end on the inhale, just before the answer. See `references/storytelling.md` §5, `references/short-form-drama.md` §4, and `examples/binge-hooks.md`.
 
 **Every beat earns its place.** Each beat advances plot, reveals character, raises tension, reveals information, lands an emotion, plants a needed visual, or pays something off. Cut beats that do none of these. Keep the quiet beat that lets an important moment land; pacing is not the same as speed.
 
@@ -128,4 +128,4 @@ Load only what the current task needs.
 - `references/runtime-timing.md`: speech rates by language, delivery modifiers, runtime budgeting.
 - `references/editorial-review.md`: the full self-review and the review/rewrite workflow.
 - `templates/`: series bible, character profile, story outline, episode outline, screenplay, continuity ledger.
-- `examples/`: natural dialogue across languages, weak vs strong storytelling, a full production-ready episode.
+- `examples/`: natural dialogue across languages, weak vs strong storytelling, hooks and ending cuts with a payoff ladder, a full production-ready episode.
