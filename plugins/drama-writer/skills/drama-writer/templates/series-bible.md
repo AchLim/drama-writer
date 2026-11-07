@@ -55,10 +55,15 @@
 ## 8. Open threads and promised payoffs
 - <Setup> (planted ep <n>), payoff planned ep <n>
 
+### Payoff ladder (what the viewer wants, paid in steps)
+| Viewer's want | Small payoff (ep) | Bigger payoff (ep) | Full payoff (ep) | Next want it opens |
+|---|---|---|---|---|
+| | | | | |
+
 ## 9. Episode log
-| Ep | Title | Episode question | Key turn | Ending type | Hook type |
-|---|---|---|---|---|---|
-| 01 | | | | | |
+| Ep | Title | Episode question | Key turn | Ending type | Hook type | Payoff given |
+|---|---|---|---|---|---|---|
+| 01 | | | | | | |
 
 ## 10. Current state of the story
 <Paste the latest STATE AFTER EP block here; see references/episode-continuity.md §2.>
