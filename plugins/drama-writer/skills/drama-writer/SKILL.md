@@ -19,9 +19,9 @@ Quality beats compliance. Every structure in this skill is a tool, not a quota. 
 
 | Request looks like | Workflow | Deliver | Load |
 |---|---|---|---|
-| A loose idea, "give me concepts" | A. Concept | 1–3 sharp concepts: premise, genre, core conflict, leads, dramatic question, hook, direction | `references/storytelling.md` |
-| An approved concept, "develop it", "plan the series" | B. Story development | Synopsis, character profiles, structure, plot points, reveals plan, ending direction, episode breakdown, series bible | `references/plot-structure.md`, `references/character-development.md`, `templates/series-bible.md`, `templates/story-outline.md`, `templates/character-profile.md` |
-| "Write episode N", "write the scene" | C. Episode writing | Episode objective, hook, beat progression, screenplay with dialogue, ending beat | `references/short-form-drama.md`, `references/natural-dialogue.md`, `references/scene-construction.md`, `templates/episode-outline.md`, `templates/screenplay.md` |
+| A loose idea, "give me concepts" | A. Concept | 1–3 sharp concepts: premise, genre, core conflict, leads, dramatic question, hook and its engine, the viewer's want, direction | `references/storytelling.md` |
+| An approved concept, "develop it", "plan the series" | B. Story development | Synopsis, character profiles, structure, plot points, reveals plan, payoff ladder, ending direction, episode breakdown, series bible | `references/plot-structure.md`, `references/character-development.md`, `templates/series-bible.md`, `templates/story-outline.md`, `templates/character-profile.md` |
+| "Write episode N", "write the scene" | C. Episode writing | Episode objective, hook, beat progression, screenplay with dialogue, ending beat | `references/short-form-drama.md`, `references/natural-dialogue.md`, `references/scene-construction.md`, `templates/episode-outline.md`, `templates/screenplay.md`; add `references/emotional-performance.md` when the script will be voiced |
 | "Make it production-ready", shot list, prompts for AI video, TTS | D. Production screenplay | Scene IDs, shot IDs (if asked), location, time, cast present, visual action, dialogue, optional performance tags, continuity notes | `references/visual-storytelling.md`, `references/shot-continuity.md`, `references/ai-video-production.md`, `references/emotional-performance.md`, `templates/screenplay.md`, `templates/continuity-ledger.md` |
 | "Review / fix / punch up this" | E. Editorial review | Diagnosis ranked by impact, then the corrected text | `references/editorial-review.md` plus whichever craft files the problems touch |
 | "Continue", "next episode", existing project files | F. Continuation | New material that contradicts nothing established | `references/episode-continuity.md` first, then as for C or D |
@@ -115,13 +115,13 @@ Do a real editorial pass, silently, using `references/editorial-review.md`: stor
 
 Load only what the current task needs.
 
-- `references/storytelling.md`: premise design, dramatic question, stakes, hooks, genre promises.
+- `references/storytelling.md`: premise design, dramatic question, stakes, hook engines and hook testing, genre promises.
 - `references/plot-structure.md`: setup to resolution, reversals, reveals, twist design, structures for each length.
 - `references/character-development.md`: building characters, voice differentiation, consistency, relationship-driven behaviour.
 - `references/natural-dialogue.md`: spoken authenticity, subtext, multi-character scenes, AI-dialogue tells.
 - `references/multilingual-writing.md`: language selection, register, honorifics, regional varieties, localization, per-language notes.
-- `references/emotional-performance.md`: emotional credibility, restraint, performance tags, TTS provider differences.
-- `references/short-form-drama.md`: vertical-format pacing, retention, episode shapes, cliffhanger variety.
+- `references/emotional-performance.md`: emotional credibility, restraint, writing for the voice, delivery sheets, performance tags, TTS provider differences.
+- `references/short-form-drama.md`: vertical-format pacing, retention, re-hooks, ending cuts, episode shapes, cliffhanger variety.
 - `references/visual-storytelling.md`: turning inner states into filmable behaviour, blocking, props, symbolism.
 - `references/scene-construction.md`: scene goals, entering late, turns, scene geography, scene continuity.
 - `references/shot-continuity.md`: cut types, physical continuity, the adjacent-shot validation pass.
