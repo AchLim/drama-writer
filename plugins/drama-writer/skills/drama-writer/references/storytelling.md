@@ -5,7 +5,7 @@
 2. The dramatic mechanism
 3. Stakes the audience feels
 4. The central dramatic question
-5. Hooks for short-form drama
+5. Hooks for short-form drama (engines, drafting and testing)
 6. Genre promises
 7. Developing concepts (Workflow A)
 8. Premise red flags
@@ -86,6 +86,32 @@ On vertical platforms the viewer decides in about two seconds. The hook is the f
 - Image first, words second. A strong opening often has no dialogue for the first second or two.
 - Vary hooks across a series. Five episodes that open with a slap teach the audience to scroll.
 
+### Three engines: curiosity, anticipation, desire
+
+A hook that only raises a question makes the viewer curious. Curiosity keeps a viewer for one episode. What keeps them for twenty is wanting something to happen. Know which engine each hook runs on, and stack two when you can.
+
+| Engine | What the viewer feels | Built from | Example |
+|---|---|---|---|
+| Curiosity | "What is that? Who is it?" | A gap in information | A text from an unknown number in a dead man's coat |
+| Anticipation | "Something is coming, and I know it" | Dramatic irony, a visible clock, a planted weapon | We saw the forged signature; the heir is about to read the will aloud |
+| Desire | "I need to see this happen" | A wrong the viewer witnessed, a feeling held back, a person who deserves to find out | The sister who stole the fiancé is giving a toast; the bride is holding the hotel receipt and smiling |
+
+- **Desire is the strongest binge engine.** It is built by showing a wrong (or a love, or a secret) clearly and early, then making the viewer wait for the moment it comes out. The viewer stays to see the face of the person who finds out.
+- **Stack engines.** Curiosity plus desire: we don't know who "M" is, but we already want the widow to stop protecting the husband who lied to her.
+- **Name the viewer's want.** Before writing an episode, write one line: "By now the viewer wants ___." If you can't fill it, the episode is running on curiosity alone.
+
+### Drafting and testing a hook
+
+Don't write one hook and keep it. Draft three to five that use different techniques or engines, then test each:
+
+1. **Scroll test.** With the first frame alone, is something wrong, about to happen, or out of place? A face, a hand, an object in close-up beats a wide establishing shot.
+2. **Sound-off test.** Can the viewer read the conflict without audio? If the hook needs its line to make sense, add a visual that carries half of it.
+3. **Specificity test.** Swap the characters for any other drama. If the hook still works unchanged, it is generic. Make it something only this story could open with.
+4. **Promise test.** What does the hook promise, and does the episode pay it (or pay a part of it and raise the price of the rest)?
+5. **Second-question test.** By second 10, has the hook led into a second question or want? A hook that answers itself and stops loses the viewer at second 11.
+
+Keep the strongest, say why in one line, and save a good reject for a later episode or an ending.
+
 ## 6. Genre promises
 
 Genre is a promise of a specific pleasure. Know which one you are delivering.
@@ -113,7 +139,8 @@ When asked for concepts, deliver for each:
 - **Core conflict**: who wants what, against whom.
 - **Main characters**: two to four, each with one line of want and one line of contradiction.
 - **Central dramatic question.**
-- **Opening hook**: the first image and line of episode 1.
+- **Opening hook**: the first image and line of episode 1, and the engine it runs on (curiosity, anticipation, desire).
+- **The viewer's want**: what the audience will be aching to see by episode 3 (the confession, the exposure, the first kiss, the villain's face when the tables turn). If a concept has no answer here, it may fill a few episodes but not a binge.
 - **Direction**: where the series goes and roughly how long it can sustain the engine (e.g. "20–30 episodes; midpoint reveal flips the alliance").
 - **What makes it distinctive**, in one line.
 
