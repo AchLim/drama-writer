@@ -11,6 +11,27 @@
 
 ## 1. The series bible
 
+### A project a writer can read
+
+For a new project, offer a plain Markdown folder. Use episodes, chapters, or parts as appropriate:
+
+```text
+my-series/
+  project.md          # overview, progress, links
+  series-bible.md     # foundations and clearly marked plans
+  story-state.md      # state after the latest accepted installment
+  episode-index.md    # brief chronological guide
+  characters/         # optional profiles
+  episodes/           # accepted story and clearly identified drafts
+  episode-records/    # concise records of accepted installments
+```
+
+Use the project, story-state, episode-index, and episode-record templates in `templates/`. A small project can combine notes or omit folders. Adapt links and names to the user's existing files; do not move or rename them just to match this example. Use headings and short prose a person can edit. Save the accepted story itself, not just summaries: summaries can omit voice, dialogue, and context. Keep records selective and point to the episode and scene for important facts. Do not archive whole conversations by default; record accepted decisions instead.
+
+### What counts as established
+
+Mark installments and records as draft or accepted. Keep future plans distinct from events that have happened, and exclude rejected ideas from canon. The accepted story is evidence of what happened; the index and current state are aids that may need correction. A plan, a newer note, or a draft does not automatically override an accepted scene. If accepted sources conflict, point out the conflict and ask the user to decide when it matters. Never invent a missing event. If acceptance or the latest installment is unclear and matters, ask or state a provisional assumption.
+
 For any multi-episode project, keep a bible (`templates/series-bible.md`) containing:
 - Series premise and logline.
 - Genre, tone, target audience, platform, episode length.
@@ -26,11 +47,11 @@ For any multi-episode project, keep a bible (`templates/series-bible.md`) contai
 - Visual reference notes for recurring characters (wardrobe, distinguishing features) for AI video consistency.
 - Episode log: one line per episode.
 
-The bible is the source of truth. If the user's files differ from your memory of the conversation, the files win.
+The bible records foundations and plans. If project files differ from conversation memory, check the files; verify specific events against the accepted story when needed.
 
 ## 2. State of the story (updated every episode)
 
-After writing each episode, update (or provide for the user to save) a short state block:
+After an episode is accepted, update the state and its episode record if the user has authorized those edits; otherwise provide proposed updates for review. A draft can have a provisional state, clearly labeled and kept separate from the accepted state:
 
 ```
 STATE AFTER EP 07
@@ -64,12 +85,12 @@ Rules:
 ## 4. Continuation protocol (Workflow F)
 
 When asked to continue a story or write the next episode:
-1. **Find the material.** Look for project files: bible, character profiles, earlier episodes, state blocks, outline. Read them. If the user pasted material, that is the source.
+1. **Find the material.** Identify the project and latest accepted installment. Read the overview, bible, current state, index, relevant character profiles, and recent accepted episodes when available. If the user pasted material, use it as a source. Work with existing names and layout.
 2. **Extract the state.** Where/when we are, who knows what, emotional states, physical states (injuries, possessions, clothes if continuous), open threads, recent ending types.
-3. **Identify the obligation.** What did the previous episode promise? A cliffhanger must be addressed.
+3. **Identify the obligation.** What did the previous episode promise? A cliffhanger must be addressed. Look up relevant earlier records and scenes for returning secrets, characters, and events; use the original scene when wording or context matters.
 4. **Write**, keeping register, voice, and established facts.
 5. **Check against the source** (section 7).
-6. **Update the state** for the next episode.
+6. **Record accepted changes.** Once accepted, save the episode, add its concise record and index entry, and update the current state when authorized. Otherwise provide proposed updates. Do not promote a draft to accepted story merely because it was generated or saved.
 
 Never invent earlier events as if they happened. If the next episode needs a past event that was never shown, present it as new information (a revelation, with a reason it wasn't known), and flag it to the user if it changes established material.
 
