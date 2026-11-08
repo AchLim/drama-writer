@@ -1,6 +1,7 @@
 ## What this changes
 
 <!-- One or two sentences. Link the issue it fixes. -->
+<!-- Target develop for contributions. A maintainer may request a release branch for a QA fix. -->
 
 ## Release notes
 
