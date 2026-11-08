@@ -163,9 +163,10 @@
   {
     "id": "21-routing-other-goal",
     "title": "Honor a goal outside suggested choices",
-    "prompt": "Earlier I asked for help with my drama script and you offered review, rewrite, or continuation. My answer: none of those; help me name the fictional seaside town. Suggest five names and briefly explain their mood.",
-    "checks": [{ "type": "skill_activated" }],
-    "rubric": "Accepts the user's own goal, suggests five fictional town names with moods, and does not insist on the previous menu, rewrite a scene, or ask the user to choose again."
+    "first_prompt": "Help me with my drama script.",
+    "prompt": "None of those; help me name the fictional seaside town. Suggest five names and briefly explain their mood.",
+    "checks": [{ "type": "skill_activated", "turn": 1 }, { "type": "regex", "pattern": "\\?", "turn": 1 }],
+    "rubric": "In the first turn, activates the skill and asks a focused question with relevant options and room for another answer. In the resumed conversation, accepts the user's own goal and suggests five fictional town names with moods without insisting on the earlier menu, rewriting a scene, or asking the user to choose again."
   },
   {
     "id": "22-routing-known-details",
