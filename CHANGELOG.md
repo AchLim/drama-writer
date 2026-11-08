@@ -12,7 +12,7 @@ All notable changes to this project are documented here. The project follows [Se
 - Guidance for accepted story and drafts, maintaining continuity records, and checking the effects of earlier revisions.
 
 ### Changed
-- Generate directory-compatible plugin files for releases instead of tracking them on the development branch.
+- Install the marketplace plugin directly from `plugins/drama-writer/` and remove the duplicated `directory-plugin/` folder. The directory-compatible copy is generated on demand with `npm run build:directory` and is not tracked.
 
 ## [1.1.0] - 2026-11-08
 

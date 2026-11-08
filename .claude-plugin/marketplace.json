@@ -7,7 +7,7 @@
   "plugins": [
     {
       "name": "drama-writer",
-      "source": "./directory-plugin",
+      "source": "./plugins/drama-writer",
       "version": "1.2.0",
       "description": "akoru's Claude Code skills. Includes drama-writer: short dramas for vertical and AI video in any language, with natural dialogue, shot lists and continuity checks."
     }
