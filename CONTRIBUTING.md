@@ -42,9 +42,11 @@ All three run in CI on Linux, macOS and Windows.
 
 If you changed `SKILL.md` or `templates/screenplay.md`, run `npm run build:single` and commit the new `drama-writer.md`.
 
-### Raise the version
+### Record changes and prepare releases
 
-Every pull request that changes what users get raises the version once:
+Feature and fix pull requests leave the package version unchanged and add user-facing notes under `Unreleased` in `CHANGELOG.md`. Combine changes intended to ship together before choosing the release version.
+
+When preparing a release, raise the version once for the whole release:
 
 ```bash
 npm version patch    # fixes and wording
@@ -52,7 +54,7 @@ npm version minor    # new guidance, new templates, new CLI options
 npm version major    # anything that changes how existing installs behave
 ```
 
-`npm version` writes the number to `package.json`, `plugins/drama-writer/skills/drama-writer/VERSION`, `SKILL.md`, and both plugin manifests, and rebuilds `drama-writer.md`. Add a matching section to `CHANGELOG.md`.
+`npm version` writes the number to `package.json`, `plugins/drama-writer/skills/drama-writer/VERSION`, `SKILL.md`, and both plugin manifests, and rebuilds generated files. Move the unreleased notes into a dated section for that version. Create the release tag and publish only when ready to release; use `--no-git-tag-version` if preparing the version in a release pull request.
 
 ## Changing the skill
 
@@ -84,7 +86,7 @@ This uses your own Claude Code login and usage. In the pull request, say which s
 ## What review checks
 
 - The checks pass.
-- The version went up and the changelog says why.
+- User-facing changes have an unreleased changelog note; release changes have a matching version and dated changelog section.
 - Writing changes come with eval notes.
 - Nothing invents facts: no made-up statistics, provider features or tool limits.
 
