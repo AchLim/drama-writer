@@ -4,7 +4,7 @@ This folder is a complete Agent Skill. Claude reads `SKILL.md` first and loads t
 
 - `SKILL.md`: workflows, language rules, core craft rules, output format, and a map of the other files.
 - `references/`: in-depth guidance (storytelling, plot, character, dialogue, multilingual writing, emotion and TTS, short-form pacing, visual storytelling, scenes, shot continuity, series continuity, AI video, runtime, editorial review).
-- `templates/`: series bible, character profile, story outline, episode outline, screenplay (standard and production), continuity ledger.
+- `templates/`: project overview, story state, episode index and record, series bible, character profile, story outline, episode outline, screenplay (standard and production), continuity ledger.
 - `examples/`: natural dialogue in six languages, weak vs strong storytelling, binge hooks and ending cuts, flat vs performed voice delivery, a full production-ready episode.
 - `scripts/estimate-runtime.mjs`: optional runtime checker for scripts in the template format (`node scripts/estimate-runtime.mjs file.md --target 75`). Needs Node.js 18+; the skill works without it. Use `-` to read from stdin.
 
