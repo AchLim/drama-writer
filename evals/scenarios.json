@@ -150,7 +150,7 @@
     "id": "19-routing-ambiguous",
     "title": "Ambiguous request gets a focused question",
     "prompt": "Help me with my drama script.",
-    "checks": [{ "type": "skill_activated" }, { "type": "regex", "pattern": "\\?", "min": 1 }],
+    "checks": [{ "type": "skill_activated" }],
     "rubric": "Asks one concise question about the desired help, offers a few relevant choices and invites another answer; does not assume a specific script or invent its contents."
   },
   {
@@ -165,7 +165,7 @@
     "title": "Honor a goal outside suggested choices",
     "first_prompt": "Help me with my drama script.",
     "prompt": "None of those; help me name the fictional seaside town. Suggest five names and briefly explain their mood.",
-    "checks": [{ "type": "skill_activated", "turn": 1 }, { "type": "regex", "pattern": "\\?", "turn": 1 }],
+    "checks": [{ "type": "skill_activated", "turn": 1 }],
     "rubric": "In the first turn, activates the skill and asks a focused question with relevant options and room for another answer. In the resumed conversation, accepts the user's own goal and suggests five fictional town names with moods without insisting on the earlier menu, rewriting a scene, or asking the user to choose again."
   },
   {

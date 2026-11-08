@@ -198,7 +198,7 @@ async function runOne(s) {
   if (r.code !== 0 || a.isError) checks.push({ type: "run", pass: false, detail: a.text || r.stderr.slice(0, 500) || `exit ${r.code}` });
   const md = [
     `# ${s.id}: ${s.title}`, "", ...(first ? [`**First prompt:** ${s.first_prompt}`, "", `**First response:** ${first.text}`, ""] : []), `**Prompt:** ${s.prompt}`, "", `**Rubric:** ${s.rubric}`, "",
-    `**Skill activated:** ${a.skillUsed} · **Skill files read:** ${a.skillFilesRead.join(", ") || "none"}`,
+    `**Skill activated:** ${a.skillUsed || !!first?.skillUsed} · **Skill files read:** ${[...(first?.skillFilesRead ?? []), ...a.skillFilesRead].join(", ") || "none"}`,
     `**Checks:** ${checks.map((c) => `${c.pass ? "PASS" : "FAIL"} ${c.type} (${c.detail})`).join("; ")}`, "", "---", "", a.text || `(no result)\n\n${r.stderr.slice(0, 2000)}`,
   ].join("\n");
   writeFileSync(path.join(outDir, `${s.id}.md`), md);
