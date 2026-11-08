@@ -65,6 +65,18 @@ npm version major --no-git-tag-version    # incompatible changes
 
 `npm version` writes the number to `package.json`, `plugins/drama-writer/skills/drama-writer/VERSION`, `SKILL.md`, and both plugin manifests, and rebuilds generated files. Move the included unreleased notes into a dated section for the version. After QA, open a pull request from the release branch to `main`. After approval and merge, tag the tested release commit and publish when ready. Also merge the release changes back into `develop`, preserving any newer `Unreleased` notes and QA fixes, so they are not lost from later releases.
 
+Before the release pull request, build and include the marketplace distribution from the release's exact source. On a branch targeting `release/<version>`, run:
+
+```bash
+npm run build:directory
+git add -f directory-plugin/
+node scripts/build-directory-plugin.mjs --check --require-output
+```
+
+Commit the output and open a pull request into the release branch. CI requires the tracked, up-to-date directory copy for pull requests into release branches and `main`; this keeps the existing marketplace installation working. Do not publish a release if that check fails.
+
+When merging release changes back to `develop`, use a separate branch and pull request. Remove the generated copy from the merge before committing with `git rm -r --cached --ignore-unmatch directory-plugin/`. Preserve later development changes and changelog notes. The directory remains ignored on `develop` and CI rejects tracked copies there.
+
 For an urgent fix to a released version, a maintainer can create a patch branch from the released tag on `main`, have the fix reviewed and tested, then release the patch. Bring the fix back into `develop` and any active release branch where it applies, without downgrading their versions.
 
 ## Changing the skill
@@ -111,4 +123,4 @@ Everyone taking part follows the [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ## Directory plugin
 
-`plugins/drama-writer/` is the source of truth. After editing it, run `npm run build:directory` to regenerate `directory-plugin/`, which excludes file types restricted by the Claude directory. Commit the generated files with the source changes. `npm run check` detects stale output.
+`plugins/drama-writer/` is the source of truth. The generated `directory-plugin/` excludes file types restricted by the Claude directory and is not tracked on `develop`. Run `npm run build:directory` to inspect it locally; `npm run check` validates it if present. If a local copy becomes stale, rebuild it. The release process above includes the verified copy on `main` so marketplace installations continue to work.

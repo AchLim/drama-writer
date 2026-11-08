@@ -34,5 +34,13 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run check
+      - name: Keep generated marketplace files out of development
+        if: github.ref == 'refs/heads/develop' || (github.event_name == 'pull_request' && github.base_ref == 'develop')
+        run: node -e "if (require('child_process').execFileSync('git', ['ls-files', 'directory-plugin/'], {encoding:'utf8'}).trim()) { console.error('Generated marketplace files must not be tracked on develop'); process.exit(1) }"
+      - name: Verify marketplace distribution for release
+        if: github.ref == 'refs/heads/main' || (github.event_name == 'pull_request' && (github.base_ref == 'main' || startsWith(github.base_ref, 'release/')))
+        run: |
+          git ls-files --error-unmatch directory-plugin/skills/drama-writer/SKILL.md
+          node scripts/build-directory-plugin.mjs --check --require-output
       - run: npm run typecheck
       - run: npm test
