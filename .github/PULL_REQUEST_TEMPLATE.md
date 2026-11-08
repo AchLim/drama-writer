@@ -1,16 +1,17 @@
 ## What this changes
 
 <!-- One or two sentences. Link the issue it fixes. -->
+<!-- Target develop for contributions. A maintainer may request a release branch for a QA fix. -->
 
-## Version
+## Release notes
 
-<!-- The new version from `npm version patch|minor|major`, and the CHANGELOG section you added. -->
+<!-- Describe the Unreleased changelog entry, or the version for a release PR. -->
 
 ## Checklist
 
 - [ ] `npm run check`, `npm run typecheck` and `npm test` pass
 - [ ] `drama-writer.md` rebuilt if `SKILL.md` or the screenplay template changed
-- [ ] Version raised and `CHANGELOG.md` updated
+- [ ] User-facing changes recorded under `Unreleased` (or version and changelog updated for a release)
 - [ ] For writing changes: eval scenarios run, and what changed in the output is described below
 - [ ] No em dashes, buzzwords, or claims without evidence
 

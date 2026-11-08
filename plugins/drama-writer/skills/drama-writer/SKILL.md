@@ -4,7 +4,7 @@ description: "Writes and edits short dramas for vertical and AI video in any lan
 when_to_use: "Use when the user wants to create, develop, continue, localize, or review a short drama, micro drama, vertical series episode, screenplay, scene, or dialogue: 15-second to 3-minute episodes for TikTok, YouTube Shorts, Reels, or short-drama apps, and scripts meant for AI video generation or text-to-speech. Also for series bibles, character profiles, hooks, twists, cliffhangers, runtime estimates, shot lists, and continuity checks. Works in any language, including English, Indonesian, Mandarin, Korean, Japanese, and Spanish."
 license: MIT
 metadata:
-  version: "1.1.0"
+  version: "1.2.0"
 ---
 
 # Drama Writer
@@ -17,6 +17,8 @@ Quality beats compliance. Every structure in this skill is a tool, not a quota. 
 
 **Workflow.** Decide what the user actually asked for. Output depth differs a lot between them.
 
+Users can describe their goal in their own words; they do not need workflow or reference names. Check the request, conversation, and relevant supplied files before asking. If the intent is clear, proceed with the requested work and load the relevant guidance. If an essential detail is missing, ask a focused question about that detail. If the goal itself is unclear, ask one brief, direct question with two or three relevant choices and an invitation to describe another goal. Wait for the answer before asking for further details. Do not ask again for information already supplied or force a menu when a reasonable assumption will do; state consequential assumptions. Honor an answer outside the suggested choices.
+
 | Request looks like | Workflow | Deliver | Load |
 |---|---|---|---|
 | A loose idea, "give me concepts" | A. Concept | 1–3 sharp concepts: premise, genre, core conflict, leads, dramatic question, hook and its engine, the viewer's want, direction | `references/storytelling.md` |
@@ -26,7 +28,7 @@ Quality beats compliance. Every structure in this skill is a tool, not a quota. 
 | "Review / fix / punch up this" | E. Editorial review | Diagnosis ranked by impact, then the corrected text | `references/editorial-review.md` plus whichever craft files the problems touch |
 | "Continue", "next episode", existing project files | F. Continuation | New material that contradicts nothing established | `references/episode-continuity.md` first, then as for C or D |
 
-If the request spans several workflows ("idea to finished episode"), do them in order and keep each layer short until the user approves it, unless they asked for everything at once. Do not add camera specs, shot IDs or TTS tags to a story or plain screenplay request.
+If the request spans several workflows ("review this scene, then make it production-ready"), use the relevant guidance for each and carry out the requested steps. Ask before proceeding only when a decision or approval is necessary or the user requested a checkpoint. Do not add camera specs, shot IDs or TTS tags to a story or plain screenplay request.
 
 **Writing language.** Decide in this order:
 1. The user's explicit instruction ("write it in Korean").
@@ -99,9 +101,9 @@ Production mode adds IDs, precise staging, and continuity; it never adds padding
 
 ## 5. Series work and continuation
 
-For multi-episode projects, keep a series bible (`templates/series-bible.md`) and, after each episode, an updated "state of the story": what each character now knows, feels, and possesses; open questions; planted clues; promised payoffs. Episodes inherit emotional consequences; never reset a character at the top of an episode. Cliffhangers must grow out of the episode's own conflict, and they must vary in kind. Full method in `references/episode-continuity.md`.
+For a series, offer a human-readable project folder with a bible, accepted installments, a concise episode guide and records, and a current story state (`templates/`). Adapt to existing files and to chapters or parts. Separate accepted events from drafts and plans. Read the state and relevant original scenes before continuing; after an installment is accepted, propose or save the record and state updates as authorized. See `references/episode-continuity.md` for setup, revisions, and continuity checks. Episodes inherit emotional consequences; never reset a character at the top of an episode. Cliffhangers must grow out of the episode's own conflict and vary in kind.
 
-When the project lives in files, read them first. Return new material in your reply. Save it to the project only when the user asks, or when they've already set that up (for example, "save each episode as a file"). Never edit existing project files, such as the bible or earlier episodes, without asking.
+When the project lives in files, read them first. Return new material in your reply. Save or update project files only when the user asks or has already authorized that workflow. Saving a draft does not make it accepted. Do not silently rewrite earlier episodes.
 
 ## 6. Runtime
 
@@ -125,9 +127,9 @@ Load only what the current task needs.
 - `references/visual-storytelling.md`: turning inner states into filmable behaviour, blocking, props, symbolism.
 - `references/scene-construction.md`: scene goals, entering late, turns, scene geography, scene continuity.
 - `references/shot-continuity.md`: cut types, physical continuity, the adjacent-shot validation pass.
-- `references/episode-continuity.md`: series bible upkeep, character knowledge tracking, continuation protocol.
+- `references/episode-continuity.md`: readable project files, accepted story and drafts, knowledge tracking, continuation and revisions.
 - `references/ai-video-production.md`: generation-friendly staging, character consistency, shot-prompt handoff.
 - `references/runtime-timing.md`: speech rates by language, delivery modifiers, runtime budgeting.
 - `references/editorial-review.md`: the full self-review and the review/rewrite workflow.
-- `templates/`: series bible, character profile, story outline, episode outline, screenplay, continuity ledger.
+- `templates/`: project overview, story state, episode index and record, series bible, character profile, outlines, screenplay, continuity ledger.
 - `examples/`: natural dialogue across languages, weak vs strong storytelling, hooks and ending cuts with a payoff ladder, flat vs performed voice delivery, a full production-ready episode.

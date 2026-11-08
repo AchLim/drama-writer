@@ -21,7 +21,7 @@ describe("bundled skill", () => {
       ...["storytelling", "plot-structure", "character-development", "natural-dialogue", "multilingual-writing",
         "emotional-performance", "short-form-drama", "visual-storytelling", "scene-construction", "shot-continuity",
         "episode-continuity", "ai-video-production", "runtime-timing", "editorial-review"].map((f) => `references/${f}.md`),
-      ...["series-bible", "character-profile", "story-outline", "episode-outline", "screenplay", "continuity-ledger"].map((f) => `templates/${f}.md`),
+      ...["project", "story-state", "episode-index", "episode-record", "series-bible", "character-profile", "story-outline", "episode-outline", "screenplay", "continuity-ledger"].map((f) => `templates/${f}.md`),
       ...["natural-dialogue", "weak-vs-strong-storytelling", "production-ready-scene"].map((f) => `examples/${f}.md`),
       "scripts/estimate-runtime.mjs",
     ];

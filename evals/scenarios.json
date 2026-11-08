@@ -138,5 +138,41 @@
     "prompt": "Write a 45-second scene in English: a grown son calls his mother to tell her he is not coming home for her 70th birthday, and she pretends it is fine. It will be fully voiced with an AI voice, so I want the delivery to sound human, not read. Give me the script and anything the voice needs.",
     "checks": [{ "type": "skill_activated" }, { "type": "speakers", "min": 2 }, { "type": "tag_density", "max": 0.6 }, { "type": "regex", "pattern": "surface|underneath|intensity|delivery", "flags": "i", "min": 1 }],
     "rubric": "Each charged line has a surface and an underneath with one clear leak; delivery is carried by the words (false starts, restarts, repetition, line length, punctuation) more than by tags; intensity moves and the two speakers contrast; the mother's pretending is audible but never named; at least one listener reaction is written where it matters; a delivery sheet covers the key lines and stays provider-neutral or uses only syntax the model says it is sure of."
+  },
+  {
+    "id": "18-routing-clear-review",
+    "title": "Clear review without a menu",
+    "prompt": "Review this English scene for dialogue problems. Give feedback only, no rewrite: INT. KITCHEN - NIGHT. MAYA: I am angry because you lied to me. RAVI: I lied because I was afraid you would be angry.",
+    "checks": [{ "type": "skill_activated" }, { "type": "read_file", "pattern": "references/editorial-review\\.md" }],
+    "rubric": "Reads editorial guidance, identifies concrete dialogue problems, respects feedback-only scope, and does not ask the user to choose a workflow or repeat supplied details."
+  },
+  {
+    "id": "19-routing-ambiguous",
+    "title": "Ambiguous request gets a focused question",
+    "prompt": "Help me with my drama script.",
+    "checks": [{ "type": "skill_activated" }],
+    "rubric": "Asks one concise question about the desired help, offers a few relevant choices and invites another answer; does not assume a specific script or invent its contents."
+  },
+  {
+    "id": "20-routing-combined",
+    "title": "Review and production in one request",
+    "prompt": "Review this short English scene and then turn it into a production-ready shot list, without waiting for approval: INT. KITCHEN - NIGHT. MAYA puts a key on the table. RAVI: You found it. MAYA: You wanted me to. Ravi leaves the key untouched.",
+    "checks": [{ "type": "skill_activated" }, { "type": "read_file", "pattern": "references/editorial-review\\.md" }, { "type": "read_file", "pattern": "references/(shot-continuity|visual-storytelling|ai-video-production)\\.md" }],
+    "rubric": "Uses review and production guidance, gives concrete feedback and a usable shot list in the same response, and does not request a workflow choice or an unnecessary approval."
+  },
+  {
+    "id": "21-routing-other-goal",
+    "title": "Honor a goal outside suggested choices",
+    "first_prompt": "Help me with my drama script.",
+    "prompt": "None of those; help me name the fictional seaside town. Suggest five names and briefly explain their mood.",
+    "checks": [{ "type": "skill_activated", "turn": 1 }],
+    "rubric": "In the first turn, activates the skill and asks a focused question with relevant options and room for another answer. In the resumed conversation, accepts the user's own goal and suggests five fictional town names with moods without insisting on the earlier menu, rewriting a scene, or asking the user to choose again."
+  },
+  {
+    "id": "22-routing-known-details",
+    "title": "Use details already provided",
+    "prompt": "Earlier in this conversation I specified an English vertical drama, 60 seconds, and asked for a review only. Here is the scene: INT. KITCHEN - NIGHT. MAYA: I am leaving. RAVI: Then leave. Please review its dialogue without rewriting it.",
+    "checks": [{ "type": "skill_activated" }, { "type": "read_file", "pattern": "references/editorial-review\\.md" }],
+    "rubric": "Reviews the supplied dialogue without rewriting, inventing missing context, or re-asking for the language, runtime, or requested type of help."
   }
 ]

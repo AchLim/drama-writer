@@ -38,7 +38,9 @@ if (recheck) {
     const streamFile = path.join(recheck, `${s.id}.stream.jsonl`);
     const a = existsSync(streamFile) ? analyse(readFileSync(streamFile, "utf8")) : { text: "", filesRead: [], skillFilesRead: [], skillUsed: false };
     a.text = md.slice(md.indexOf("\n---\n") + 5);
-    const checks = s.checks.map((c) => ({ ...c, ...check(c, a) }));
+    const firstStream = path.join(recheck, `${s.id}.turn1.stream.jsonl`);
+    const first = existsSync(firstStream) ? analyse(readFileSync(firstStream, "utf8")) : null;
+    const checks = s.checks.map((c) => ({ ...c, ...check(c, c.turn === 1 ? (first ?? { text: "", filesRead: [], skillFilesRead: [], skillUsed: false }) : a) }));
     const ok = checks.every((c) => c.pass);
     if (ok) passed++;
     console.log(`${ok ? "PASS" : "FAIL"} ${s.id}  files: ${a.skillFilesRead.join(", ") || "SKILL.md only"}${ok ? "" : "  " + checks.filter((c) => !c.pass).map((c) => `[${c.type}: ${c.detail}]`).join(" ")}`);
@@ -66,7 +68,7 @@ function makeProject(s) {
   return proj;
 }
 
-function runClaude(prompt, cwd) {
+function runClaude(prompt, cwd, resumeSession) {
   return new Promise((resolve) => {
     const cliArgs = [
       "-p", prompt,
@@ -76,12 +78,17 @@ function runClaude(prompt, cwd) {
       "--setting-sources", "project,local",
     ];
     if (model) cliArgs.push("--model", model);
-    const child = spawn("claude", cliArgs, { cwd, stdio: ["ignore", "pipe", "pipe"] });
+    if (resumeSession) cliArgs.push("--resume", resumeSession);
+    const mockScript = process.env.DRAMA_WRITER_EVAL_CLI_SCRIPT;
+    const child = mockScript
+      ? spawn(process.execPath, [mockScript, ...cliArgs], { cwd, stdio: ["ignore", "pipe", "pipe"] })
+      : spawn("claude", cliArgs, { cwd, stdio: ["ignore", "pipe", "pipe"] });
     let stdout = "";
     let stderr = "";
     const timer = setTimeout(() => child.kill("SIGTERM"), TIMEOUT_MS);
     child.stdout.on("data", (d) => (stdout += d));
     child.stderr.on("data", (d) => (stderr += d));
+    child.on("error", (err) => { stderr += err.message; });
     child.on("close", (code) => {
       clearTimeout(timer);
       resolve({ code, stdout, stderr });
@@ -109,6 +116,7 @@ function analyse(stream) {
   });
   return {
     text: result?.result ?? "",
+    sessionId: result?.session_id,
     isError: result?.is_error ?? true,
     costUsd: result?.total_cost_usd,
     durationMs: result?.duration_ms,
@@ -179,17 +187,27 @@ function check(c, a) {
 async function runOne(s) {
   const proj = s.project;
   const started = Date.now();
-  const r = await runClaude(s.prompt, proj);
+  let first;
+  if (s.first_prompt) {
+    const initial = await runClaude(s.first_prompt, proj);
+    first = analyse(initial.stdout);
+    writeFileSync(path.join(outDir, `${s.id}.turn1.stream.jsonl`), initial.stdout);
+    if (initial.code !== 0 || first.isError || !first.sessionId) {
+      throw new Error(`First turn failed or returned no session ID: ${first.text || initial.stderr.slice(0, 500)}`);
+    }
+  }
+  const r = await runClaude(s.prompt, proj, first?.sessionId);
   const a = analyse(r.stdout);
-  const checks = s.checks.map((c) => ({ ...c, ...check(c, a) }));
+  const checks = s.checks.map((c) => ({ ...c, ...check(c, c.turn === 1 ? first : a) }));
+  if (r.code !== 0 || a.isError) checks.push({ type: "run", pass: false, detail: a.text || r.stderr.slice(0, 500) || `exit ${r.code}` });
   const md = [
-    `# ${s.id}: ${s.title}`, "", `**Prompt:** ${s.prompt}`, "", `**Rubric:** ${s.rubric}`, "",
-    `**Skill activated:** ${a.skillUsed} · **Skill files read:** ${a.skillFilesRead.join(", ") || "none"}`,
+    `# ${s.id}: ${s.title}`, "", ...(first ? [`**First prompt:** ${s.first_prompt}`, "", `**First response:** ${first.text}`, ""] : []), `**Prompt:** ${s.prompt}`, "", `**Rubric:** ${s.rubric}`, "",
+    `**Skill activated:** ${a.skillUsed || !!first?.skillUsed} · **Skill files read:** ${[...(first?.skillFilesRead ?? []), ...a.skillFilesRead].join(", ") || "none"}`,
     `**Checks:** ${checks.map((c) => `${c.pass ? "PASS" : "FAIL"} ${c.type} (${c.detail})`).join("; ")}`, "", "---", "", a.text || `(no result)\n\n${r.stderr.slice(0, 2000)}`,
   ].join("\n");
   writeFileSync(path.join(outDir, `${s.id}.md`), md);
   writeFileSync(path.join(outDir, `${s.id}.stream.jsonl`), r.stdout);
-  const summary = { id: s.id, title: s.title, ok: !a.isError, seconds: Math.round((Date.now() - started) / 1000), costUsd: a.costUsd, skillUsed: a.skillUsed, skillFilesRead: a.skillFilesRead, toolUses: a.toolUses, checks };
+  const summary = { id: s.id, title: s.title, ok: !a.isError, seconds: Math.round((Date.now() - started) / 1000), costUsd: (first?.costUsd ?? 0) + (a.costUsd ?? 0), skillUsed: a.skillUsed || !!first?.skillUsed, skillFilesRead: [...(first?.skillFilesRead ?? []), ...a.skillFilesRead], toolUses: [...(first?.toolUses ?? []), ...a.toolUses], checks };
   const status = checks.every((c) => c.pass) ? "PASS" : "FAIL";
   console.log(`${status} ${s.id} (${summary.seconds}s) ${checks.filter((c) => !c.pass).map((c) => `[${c.type}: ${c.detail}]`).join(" ")}`);
   return summary;

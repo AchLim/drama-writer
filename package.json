@@ -1,6 +1,6 @@
 {
   "name": "@akoru/drama-writer",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Claude Code skill for writing vertical short dramas and AI-video screenplays in any language, with an installer CLI.",
   "homepage": "https://github.com/AchLim/drama-writer#readme",
   "repository": {
@@ -30,7 +30,7 @@
     "test": "npm run build && node --test --test-reporter=spec \"test/**/*.test.ts\"",
     "zip": "npm run build && node dist/cli.js export-zip --out release",
     "evals": "node evals/run-evals.mjs",
-    "version": "node scripts/sync-version.mjs && node scripts/build-single-file.mjs && node scripts/build-directory-plugin.mjs && git add plugins directory-plugin .claude-plugin drama-writer.md",
+    "version": "node scripts/sync-version.mjs && node scripts/build-single-file.mjs && node scripts/build-directory-plugin.mjs && git add plugins .claude-plugin drama-writer.md",
     "prepublishOnly": "npm run check && npm run typecheck && npm test",
     "build:directory": "node scripts/build-directory-plugin.mjs"
   },

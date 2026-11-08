@@ -7,11 +7,20 @@ Thanks for helping. Most useful contributions fall into two groups: the skill wr
 ```bash
 git clone https://github.com/AchLim/drama-writer.git
 cd drama-writer
+git switch develop
 npm ci
 npm test
 ```
 
 Development needs Node.js 22.18 or newer, because the tests run TypeScript directly. The published CLI runs on Node.js 18.17 and newer.
+
+## Where to open a pull request
+
+Open pull requests against `AchLim/drama-writer`. If you do not have write access, fork the repository, create a branch in your fork, and open a pull request from that branch to this repository.
+
+Create your feature or fix branch from `develop` and target `develop` in the pull request. GitHub defaults new pull requests to `main`, so change the base branch to `develop` when opening one. `main` holds released code; `develop` holds work for future releases. Contributors do not need to choose a release version.
+
+During release QA, a maintainer may ask for a fix to target an active `release/<version>` branch instead. Start that fix from the release branch and select it as the pull request's base. New features continue to target `develop`.
 
 ## Where things live
 
@@ -42,17 +51,23 @@ All three run in CI on Linux, macOS and Windows.
 
 If you changed `SKILL.md` or `templates/screenplay.md`, run `npm run build:single` and commit the new `drama-writer.md`.
 
-### Raise the version
+### Record changes and prepare releases
 
-Every pull request that changes what users get raises the version once:
+Feature and fix pull requests leave the package version unchanged and add user-facing notes under `Unreleased` in `CHANGELOG.md`. Combine changes intended to ship together before choosing the release version.
+
+When preparing a release, a maintainer creates `release/<version>` from `develop`. This branch is the QA stage for that release; later work on `develop` is not automatically included. Make only release preparation and QA fixes on it. Raise the version once for the whole release:
 
 ```bash
-npm version patch    # fixes and wording
-npm version minor    # new guidance, new templates, new CLI options
-npm version major    # anything that changes how existing installs behave
+npm version patch --no-git-tag-version    # fixes and wording
+npm version minor --no-git-tag-version    # new guidance, new templates, new CLI options
+npm version major --no-git-tag-version    # incompatible changes
 ```
 
-`npm version` writes the number to `package.json`, `plugins/drama-writer/skills/drama-writer/VERSION`, `SKILL.md`, and both plugin manifests, and rebuilds `drama-writer.md`. Add a matching section to `CHANGELOG.md`.
+`npm version` writes the number to `package.json`, `plugins/drama-writer/skills/drama-writer/VERSION`, `SKILL.md`, and both plugin manifests, and rebuilds generated files. Move the included unreleased notes into a dated section for the version. After QA, open a pull request from the release branch to `main`. After approval and merge, tag the tested release commit and publish when ready. Also merge the release changes back into `develop`, preserving any newer `Unreleased` notes and QA fixes, so they are not lost from later releases.
+
+The marketplace installs straight from `plugins/drama-writer/`, so a release needs no generated files and no extra step. When merging release changes back to `develop`, use a separate branch and pull request, and preserve later development changes and changelog notes.
+
+For an urgent fix to a released version, a maintainer can create a patch branch from the released tag on `main`, have the fix reviewed and tested, then release the patch. Bring the fix back into `develop` and any active release branch where it applies, without downgrading their versions.
 
 ## Changing the skill
 
@@ -84,7 +99,7 @@ This uses your own Claude Code login and usage. In the pull request, say which s
 ## What review checks
 
 - The checks pass.
-- The version went up and the changelog says why.
+- User-facing changes have an unreleased changelog note; release changes have a matching version and dated changelog section.
 - Writing changes come with eval notes.
 - Nothing invents facts: no made-up statistics, provider features or tool limits.
 
@@ -98,4 +113,4 @@ Everyone taking part follows the [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ## Directory plugin
 
-`plugins/drama-writer/` is the source of truth. After editing it, run `npm run build:directory` to regenerate `directory-plugin/`, which excludes file types restricted by the Claude directory. Commit the generated files with the source changes. `npm run check` detects stale output.
+`plugins/drama-writer/` is the single source of truth and the marketplace installs from it. `npm run build:directory` generates a trimmed copy in `directory-plugin/` (no `.mjs` script, runtime guidance adjusted) for submitting to the Claude directory. That folder is gitignored and CI rejects it if tracked on any branch. `npm run check` validates it if present.
