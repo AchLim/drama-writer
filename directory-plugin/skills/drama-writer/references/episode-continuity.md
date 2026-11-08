@@ -92,12 +92,16 @@ When asked to continue a story or write the next episode:
 5. **Check against the source** (section 7).
 6. **Record accepted changes.** Once accepted, save the episode, add its concise record and index entry, and update the current state when authorized. Otherwise provide proposed updates. Do not promote a draft to accepted story merely because it was generated or saved.
 
+### Revisions to earlier installments
+
+When an accepted installment changes, compare the change with later records, the current state, and relevant later scenes. Identify affected knowledge, chronology, setups, and payoffs; flag conflicts and uncertainty to the user. Propose the smallest necessary corrections. Update tracking files only when authorized, and do not silently rewrite later episodes. If a complete impact check is not possible, say which material was not checked.
+
 Never invent earlier events as if they happened. If the next episode needs a past event that was never shown, present it as new information (a revelation, with a reason it wasn't known), and flag it to the user if it changes established material.
 
 ## 5. Handling gaps and contradictions
 
 - **Missing information:** if it matters (e.g. whether a character already knows the secret), ask, or proceed with a clearly marked assumption ("Assuming Jun hasn't yet seen the photo; tell me if he has.").
-- **Contradictions in the source:** point them out briefly and choose the most recent or most deliberate version, unless the user says otherwise.
+- **Contradictions in the source:** point them out briefly. Distinguish accepted scenes from plans and drafts; ask the user to resolve conflicts between accepted sources when the choice matters.
 - **The user wants a change** that contradicts earlier episodes: note what it affects (which earlier scenes no longer fit) and offer the smallest set of fixes.
 
 ## 6. Avoiding repetition across episodes
