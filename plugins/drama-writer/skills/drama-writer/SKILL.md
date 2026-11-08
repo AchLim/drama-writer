@@ -101,9 +101,9 @@ Production mode adds IDs, precise staging, and continuity; it never adds padding
 
 ## 5. Series work and continuation
 
-For multi-episode projects, keep a series bible (`templates/series-bible.md`) and, after each episode, an updated "state of the story": what each character now knows, feels, and possesses; open questions; planted clues; promised payoffs. Episodes inherit emotional consequences; never reset a character at the top of an episode. Cliffhangers must grow out of the episode's own conflict, and they must vary in kind. Full method in `references/episode-continuity.md`.
+For a series, offer a human-readable project folder with a bible, accepted installments, a concise episode guide and records, and a current story state (`templates/`). Adapt to existing files and to chapters or parts. Separate accepted events from drafts and plans. Read the state and relevant original scenes before continuing; after an installment is accepted, propose or save the record and state updates as authorized. See `references/episode-continuity.md` for setup, revisions, and continuity checks. Episodes inherit emotional consequences; never reset a character at the top of an episode. Cliffhangers must grow out of the episode's own conflict and vary in kind.
 
-When the project lives in files, read them first. Return new material in your reply. Save it to the project only when the user asks, or when they've already set that up (for example, "save each episode as a file"). Never edit existing project files, such as the bible or earlier episodes, without asking.
+When the project lives in files, read them first. Return new material in your reply. Save or update project files only when the user asks or has already authorized that workflow. Saving a draft does not make it accepted. Do not silently rewrite earlier episodes.
 
 ## 6. Runtime
 
@@ -127,9 +127,9 @@ Load only what the current task needs.
 - `references/visual-storytelling.md`: turning inner states into filmable behaviour, blocking, props, symbolism.
 - `references/scene-construction.md`: scene goals, entering late, turns, scene geography, scene continuity.
 - `references/shot-continuity.md`: cut types, physical continuity, the adjacent-shot validation pass.
-- `references/episode-continuity.md`: series bible upkeep, character knowledge tracking, continuation protocol.
+- `references/episode-continuity.md`: readable project files, accepted story and drafts, knowledge tracking, continuation and revisions.
 - `references/ai-video-production.md`: generation-friendly staging, character consistency, shot-prompt handoff.
 - `references/runtime-timing.md`: speech rates by language, delivery modifiers, runtime budgeting.
 - `references/editorial-review.md`: the full self-review and the review/rewrite workflow.
-- `templates/`: series bible, character profile, story outline, episode outline, screenplay, continuity ledger.
+- `templates/`: project overview, story state, episode index and record, series bible, character profile, outlines, screenplay, continuity ledger.
 - `examples/`: natural dialogue across languages, weak vs strong storytelling, hooks and ending cuts with a payoff ladder, flat vs performed voice delivery, a full production-ready episode.

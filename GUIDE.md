@@ -202,9 +202,24 @@ Say the length in seconds. Without one, it writes a 60 to 90 second vertical epi
 
 ### Series files
 
-Keep a series bible and one file per episode in your project. drama-writer reads them before writing, keeps what each character knows and feels, and ends each episode with a "state of the story" block you can paste into the bible. It returns new episodes in the chat and saves files only when you ask.
+For a new series, ask drama-writer to set up a readable project folder. Start small and add files as the story needs them:
 
-The skill includes templates for a series bible, character profiles, outlines, screenplays and a continuity ledger. Ask Claude to fill one in.
+```text
+my-series/
+  project.md          # overview, progress, and links
+  series-bible.md     # foundations and future plans
+  story-state.md      # where the accepted story stands now
+  episode-index.md    # short guide to each accepted episode
+  episodes/           # full episodes and clearly marked drafts
+  episode-records/    # what happened and changed in each episode
+  characters/         # optional profiles
+```
+
+The skill includes templates for the overview, state, index, and episode records, as well as a bible, character profiles, outlines, screenplays, and a shot continuity ledger. Use chapters or parts instead of episodes if that fits the story. Existing projects can keep their own filenames and layout.
+
+For example, ask: "Set up a story project in this folder, save each draft separately, and update the guide and state when I accept an episode." The skill reads the state and relevant earlier scenes before continuing. The accepted episodes preserve the actual dialogue and context; short records help locate important events. Plans and drafts stay distinct from accepted story. Full conversations are not saved by default.
+
+If you revise an earlier episode, ask the skill to check its effect on later episodes and tracking notes. It should flag conflicts rather than silently rewriting later material. The skill returns new material in chat and saves or edits project files only when you ask or have already authorized that workflow.
 
 ### Production mode
 
@@ -244,7 +259,7 @@ plugins/drama-writer/skills/drama-writer/
 │                   emotion and voice tags, short-form pacing, visual storytelling,
 │                   scenes, shot continuity, series continuity, AI video, runtime,
 │                   editorial review
-├── templates/      series bible, character profile, story outline, episode outline,
+├── templates/      project, story state, episode index and record, series bible, character profile, story outline, episode outline,
 │                   screenplay, continuity ledger
 ├── examples/       dialogue in six languages, weak vs strong storytelling,
 │                   binge hooks, voice delivery, a full production episode

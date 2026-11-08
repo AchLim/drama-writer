@@ -1,6 +1,6 @@
 # Series bible: <TITLE>
 
-> The source of truth for the series. Update after every episode. If this file and memory disagree, this file wins.
+> Story foundations and plans. Mark future plans clearly. Check accepted episodes for what actually happened, and update this file when the user authorizes changes.
 
 ## 1. Core
 - **Logline:** <one or two sentences, including the mechanism>
@@ -35,6 +35,7 @@
 - <Rules that constrain events, e.g. "The will can only be contested within 30 days.">
 
 ## 5. Long-term arc
+These are plans, not events that have already happened.
 - **Phase 1 (eps <a–b>):** <...>
 - **Midpoint (ep <n>):** <reversal>
 - **Phase 2 (eps <c–d>):** <...>
