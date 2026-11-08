@@ -79,12 +79,16 @@ function runClaude(prompt, cwd, resumeSession) {
     ];
     if (model) cliArgs.push("--model", model);
     if (resumeSession) cliArgs.push("--resume", resumeSession);
-    const child = spawn("claude", cliArgs, { cwd, stdio: ["ignore", "pipe", "pipe"] });
+    const mockScript = process.env.DRAMA_WRITER_EVAL_CLI_SCRIPT;
+    const child = mockScript
+      ? spawn(process.execPath, [mockScript, ...cliArgs], { cwd, stdio: ["ignore", "pipe", "pipe"] })
+      : spawn("claude", cliArgs, { cwd, stdio: ["ignore", "pipe", "pipe"] });
     let stdout = "";
     let stderr = "";
     const timer = setTimeout(() => child.kill("SIGTERM"), TIMEOUT_MS);
     child.stdout.on("data", (d) => (stdout += d));
     child.stderr.on("data", (d) => (stderr += d));
+    child.on("error", (err) => { stderr += err.message; });
     child.on("close", (code) => {
       clearTimeout(timer);
       resolve({ code, stdout, stderr });
