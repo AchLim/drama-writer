@@ -1,6 +1,7 @@
 node_modules/
 dist/
 release/
+/directory-plugin/
 *.tgz
 evals/results/
 .DS_Store

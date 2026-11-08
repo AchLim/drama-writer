@@ -1,8 +1,10 @@
-import { readFileSync, readdirSync, mkdirSync, rmSync, writeFileSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync, mkdirSync, rmSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 
 const source = 'plugins/drama-writer';
-const target = 'directory-plugin';
+const outIndex = process.argv.indexOf('--out');
+if (outIndex !== -1 && (!process.argv[outIndex + 1] || process.argv[outIndex + 1].startsWith('--'))) throw new Error('--out requires a directory');
+const target = outIndex === -1 ? 'directory-plugin' : process.argv[outIndex + 1];
 const files = new Map();
 function collect(dir, prefix = '') {
   for (const entry of readdirSync(dir, { withFileTypes: true })) {
@@ -26,6 +28,14 @@ edit(skill + 'templates/screenplay.md', s => s.replace(/^- .*scripts\/estimate-r
 edit(skill + 'examples/production-ready-scene.md', s => s.replace('`node scripts/estimate-runtime.mjs examples/production-ready-scene.md --target 70` flagged', 'A runtime estimate showed'));
 edit(skill + 'README.md', s => s.replace(/^- `scripts\/estimate-runtime\.mjs`.*\n/m, '').replace(' `VERSION` names the release this folder came from.', ''));
 if (process.argv.includes('--check')) {
+  if (!existsSync(target)) {
+    if (process.argv.includes('--require-output')) {
+      console.error(`Directory plugin missing: ${target}. Run npm run build:directory and include it in the release.`);
+      process.exit(1);
+    }
+    console.log('Directory plugin generated in memory; no local output to compare.');
+    process.exit(0);
+  }
   const actual = new Map();
   function scan(dir, prefix = '') {
     for (const entry of readdirSync(dir, { withFileTypes: true })) {
