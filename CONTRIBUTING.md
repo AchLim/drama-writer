@@ -17,7 +17,7 @@ Development needs Node.js 22.18 or newer, because the tests run TypeScript direc
 
 Open pull requests against `AchLim/drama-writer`. If you do not have write access, fork the repository, create a branch in your fork, and open a pull request from that branch to this repository.
 
-Target `main` by default. When an issue or a maintainer says the change belongs in an active release, choose the named `release/<version>` branch as the pull request's base instead. For example, select `release/1.2.0` for a change explicitly scheduled for that release. If you are unsure, ask on the issue; maintainers can change the base later. Release branches collect approved changes and are merged to `main` through a release pull request.
+Target `main`. Contributors do not need to choose a release version or create a release branch. A maintainer may request a different base for an exceptional fix to an older release.
 
 ## Where things live
 
@@ -52,15 +52,17 @@ If you changed `SKILL.md` or `templates/screenplay.md`, run `npm run build:singl
 
 Feature and fix pull requests leave the package version unchanged and add user-facing notes under `Unreleased` in `CHANGELOG.md`. Combine changes intended to ship together before choosing the release version.
 
-When preparing a release, raise the version once for the whole release:
+When preparing a release, a maintainer creates `release/<version>` from `main`. The branch contains the changes on `main` at that point; later contributions to `main` are not automatically included. On the release branch, raise the version once for the whole release:
 
 ```bash
-npm version patch    # fixes and wording
-npm version minor    # new guidance, new templates, new CLI options
-npm version major    # anything that changes how existing installs behave
+npm version patch --no-git-tag-version    # fixes and wording
+npm version minor --no-git-tag-version    # new guidance, new templates, new CLI options
+npm version major --no-git-tag-version    # incompatible changes
 ```
 
-`npm version` writes the number to `package.json`, `plugins/drama-writer/skills/drama-writer/VERSION`, `SKILL.md`, and both plugin manifests, and rebuilds generated files. Move the unreleased notes into a dated section for that version. Create the release tag and publish only when ready to release; use `--no-git-tag-version` if preparing the version in a release pull request.
+`npm version` writes the number to `package.json`, `plugins/drama-writer/skills/drama-writer/VERSION`, `SKILL.md`, and both plugin manifests, and rebuilds generated files. Use `--no-git-tag-version` when preparing the version for review. Move the included unreleased notes into a dated section for that version, then open a release pull request from `release/<version>` to `main`. After review and merge, tag the tested release-branch commit and publish when ready. If `main` received other changes after the release branch was created, do not tag the merge commit as the release: it contains those additional changes. Reconcile any new unreleased changelog notes when merging.
+
+If an urgent fix must ship for an older release while `main` contains newer work, a maintainer can create a patch branch from the last released tag, request the fix against it, and release that patch separately. Bring the fix into `main` and any active release branches as needed without downgrading their versions.
 
 ## Changing the skill
 
