@@ -4,13 +4,15 @@ All notable changes to this project are documented here. The project follows [Se
 
 ## [Unreleased]
 
+## [1.2.0] - 2026-11-08
+
 ### Added
 - Guidance for choosing writing workflows from natural requests and asking focused questions when essential details are unclear.
 - Human-readable project, story state, episode index, and episode record templates for tracking a series across installments.
 - Guidance for accepted story and drafts, maintaining continuity records, and checking the effects of earlier revisions.
 
 ### Changed
-- Generate directory-compatible plugin files for releases instead of tracking them on the development branch.
+- Install the marketplace plugin directly from `plugins/drama-writer/` and remove the duplicated `directory-plugin/` folder. The directory-compatible copy is generated on demand with `npm run build:directory` and is not tracked.
 
 ## [1.1.0] - 2026-11-08
 
