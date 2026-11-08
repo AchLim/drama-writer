@@ -2,7 +2,7 @@
 
 All notable changes to this project are documented here. The project follows [Semantic Versioning](https://semver.org/).
 
-## [1.2.0] - 2026-11-08
+## [Unreleased]
 
 ### Added
 - Human-readable project, story state, episode index, and episode record templates for tracking a series across installments.
