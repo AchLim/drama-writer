@@ -13,6 +13,12 @@ npm test
 
 Development needs Node.js 22.18 or newer, because the tests run TypeScript directly. The published CLI runs on Node.js 18.17 and newer.
 
+## Where to open a pull request
+
+Open pull requests against `AchLim/drama-writer`. If you do not have write access, fork the repository, create a branch in your fork, and open a pull request from that branch to this repository.
+
+Target `main` by default. When an issue or a maintainer says the change belongs in an active release, choose the named `release/<version>` branch as the pull request's base instead. For example, select `release/1.2.0` for a change explicitly scheduled for that release. If you are unsure, ask on the issue; maintainers can change the base later. Release branches collect approved changes and are merged to `main` through a release pull request.
+
 ## Where things live
 
 | Path | What it is |
