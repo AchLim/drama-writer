@@ -2,6 +2,11 @@
 
 All notable changes to this project are documented here. The project follows [Semantic Versioning](https://semver.org/).
 
+## [1.2.0] - 2026-11-08
+
+### Added
+- Guidance for choosing writing workflows from natural requests and asking focused questions when essential details are unclear.
+
 ## [1.1.0] - 2026-11-08
 
 ### Added
