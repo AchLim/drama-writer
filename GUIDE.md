@@ -12,6 +12,7 @@
   - [The single file](#the-single-file)
   - [Claude.ai](#claudeai)
 - [Working with it](#working-with-it)
+  - [Describe what you need](#describe-what-you-need)
   - [Language](#language)
   - [Length and format](#length-and-format)
   - [Series files](#series-files)
@@ -29,7 +30,7 @@
 
 drama-writer is an [Agent Skill](https://agentskills.io): a folder with a `SKILL.md` and supporting files that Claude Code loads when a task calls for it. It turns Claude into a screenwriter, script editor and production supervisor for short-form drama, especially vertical episodes for TikTok, YouTube Shorts, Reels and short-drama apps, and scripts that will become AI-generated video.
 
-`SKILL.md` is short. It holds the workflows, the language rules, the core craft rules and a map of the other files. Claude reads the longer reference guides, templates and examples only when a task needs them.
+`SKILL.md` is short. It holds the workflows, the language rules, the core craft rules and a map of the other files. It directs Claude to read relevant guides, templates and examples as needed; the files selected and the result depend on the request and the AI's execution.
 
 ## What you can use it for
 
@@ -163,7 +164,7 @@ Exit codes: `0` done, `1` refused or failed with nothing changed, `2` usage erro
 
 ### The single file
 
-[`drama-writer.md`](drama-writer.md) is the skill's workflows and core rules in one file, plus the screenplay format. It leaves out the reference guides, templates, examples and runtime script. Paste it into a chat or a project's custom instructions.
+[`drama-writer.md`](drama-writer.md) is the skill's workflows and core rules in one file, plus the screenplay format. It leaves out the reference guides, templates, examples and runtime script, so the AI cannot consult those files unless you provide them separately. Paste it into a chat or a project's custom instructions.
 
 ### Claude.ai
 
@@ -178,6 +179,16 @@ Upload the ZIP in Claude.ai under Settings, in the Skills section. Skills in Cla
 A Claude.ai upload and a Claude Code install are separate copies. Updating one doesn't update the other.
 
 ## Working with it
+
+### Describe what you need
+
+Ask in your own words; you do not need to choose a workflow or name a reference file. For example:
+
+- "Review this scene and explain the weakest dialogue."
+- "Continue my series from episode 3 using the files in this folder."
+- "Review this scene, then turn it into a production-ready shot list."
+
+The skill instructs Claude to select the relevant guidance and proceed when your request is clear. If your goal is unclear, it may ask a short question with suggestions; you can choose one or describe something else. If it asks for a detail you already supplied, point it to that detail. AI selection and compliance are not guaranteed, so review the result and correct it when needed.
 
 ### Language
 

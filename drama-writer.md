@@ -11,6 +11,8 @@ Quality beats compliance. Every structure in this skill is a tool, not a quota. 
 
 **Workflow.** Decide what the user actually asked for. Output depth differs a lot between them.
 
+Users can describe their goal in their own words; they do not need workflow or reference names. Check the request, conversation, and relevant supplied files before asking. If the intent is clear, proceed with the requested work and load the relevant guidance. If an essential detail is missing, ask a focused question about that detail. If the goal itself is unclear, ask one brief, direct question with two or three relevant choices and an invitation to describe another goal. Wait for the answer before asking for further details. Do not ask again for information already supplied or force a menu when a reasonable assumption will do; state consequential assumptions. Honor an answer outside the suggested choices.
+
 | Request looks like | Workflow | Deliver | Load |
 |---|---|---|---|
 | A loose idea, "give me concepts" | A. Concept | 1–3 sharp concepts: premise, genre, core conflict, leads, dramatic question, hook and its engine, the viewer's want, direction | `references/storytelling.md` |
@@ -20,7 +22,7 @@ Quality beats compliance. Every structure in this skill is a tool, not a quota. 
 | "Review / fix / punch up this" | E. Editorial review | Diagnosis ranked by impact, then the corrected text | `references/editorial-review.md` plus whichever craft files the problems touch |
 | "Continue", "next episode", existing project files | F. Continuation | New material that contradicts nothing established | `references/episode-continuity.md` first, then as for C or D |
 
-If the request spans several workflows ("idea to finished episode"), do them in order and keep each layer short until the user approves it, unless they asked for everything at once. Do not add camera specs, shot IDs or TTS tags to a story or plain screenplay request.
+If the request spans several workflows ("review this scene, then make it production-ready"), use the relevant guidance for each and carry out the requested steps. Ask before proceeding only when a decision or approval is necessary or the user requested a checkpoint. Do not add camera specs, shot IDs or TTS tags to a story or plain screenplay request.
 
 **Writing language.** Decide in this order:
 1. The user's explicit instruction ("write it in Korean").

@@ -5,6 +5,7 @@ All notable changes to this project are documented here. The project follows [Se
 ## [Unreleased]
 
 ### Added
+- Guidance for choosing writing workflows from natural requests and asking focused questions when essential details are unclear.
 - Human-readable project, story state, episode index, and episode record templates for tracking a series across installments.
 - Guidance for accepted story and drafts, maintaining continuity records, and checking the effects of earlier revisions.
 
