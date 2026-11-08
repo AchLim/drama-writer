@@ -4,7 +4,7 @@ description: "Writes and edits short dramas for vertical and AI video in any lan
 when_to_use: "Use when the user wants to create, develop, continue, localize, or review a short drama, micro drama, vertical series episode, screenplay, scene, or dialogue: 15-second to 3-minute episodes for TikTok, YouTube Shorts, Reels, or short-drama apps, and scripts meant for AI video generation or text-to-speech. Also for series bibles, character profiles, hooks, twists, cliffhangers, runtime estimates, shot lists, and continuity checks. Works in any language, including English, Indonesian, Mandarin, Korean, Japanese, and Spanish."
 license: MIT
 metadata:
-  version: "1.1.0"
+  version: "1.2.0"
 ---
 
 # Drama Writer
