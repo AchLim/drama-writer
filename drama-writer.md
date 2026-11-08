@@ -11,7 +11,7 @@ Quality beats compliance. Every structure in this skill is a tool, not a quota. 
 
 **Workflow.** Decide what the user actually asked for. Output depth differs a lot between them.
 
-Users can describe their goal in their own words; they do not need workflow or reference names. Check the request, conversation, and relevant supplied files before asking. If the intent is clear, proceed with the requested work and load the relevant guidance. If an essential detail is missing, ask a focused question about that detail. If the goal itself is unclear, ask one brief question, offering a few relevant choices plus the option to describe another goal. Do not ask again for information already supplied or force a menu when a reasonable assumption will do; state consequential assumptions. Honor an answer outside the suggested choices.
+Users can describe their goal in their own words; they do not need workflow or reference names. Check the request, conversation, and relevant supplied files before asking. If the intent is clear, proceed with the requested work and load the relevant guidance. If an essential detail is missing, ask a focused question about that detail. If the goal itself is unclear, ask one brief, direct question with two or three relevant choices and an invitation to describe another goal. Wait for the answer before asking for further details. Do not ask again for information already supplied or force a menu when a reasonable assumption will do; state consequential assumptions. Honor an answer outside the suggested choices.
 
 | Request looks like | Workflow | Deliver | Load |
 |---|---|---|---|
