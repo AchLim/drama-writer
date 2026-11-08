@@ -7,6 +7,7 @@ Thanks for helping. Most useful contributions fall into two groups: the skill wr
 ```bash
 git clone https://github.com/AchLim/drama-writer.git
 cd drama-writer
+git switch develop
 npm ci
 npm test
 ```
@@ -17,7 +18,9 @@ Development needs Node.js 22.18 or newer, because the tests run TypeScript direc
 
 Open pull requests against `AchLim/drama-writer`. If you do not have write access, fork the repository, create a branch in your fork, and open a pull request from that branch to this repository.
 
-Target `main` by default. When an issue or a maintainer says the change belongs in an active release, choose the named `release/<version>` branch as the pull request's base instead. For example, select `release/1.2.0` for a change explicitly scheduled for that release. If you are unsure, ask on the issue; maintainers can change the base later. Release branches collect approved changes and are merged to `main` through a release pull request.
+Create your feature or fix branch from `develop` and target `develop` in the pull request. GitHub defaults new pull requests to `main`, so change the base branch to `develop` when opening one. `main` holds released code; `develop` holds work for future releases. Contributors do not need to choose a release version.
+
+During release QA, a maintainer may ask for a fix to target an active `release/<version>` branch instead. Start that fix from the release branch and select it as the pull request's base. New features continue to target `develop`.
 
 ## Where things live
 
@@ -52,15 +55,17 @@ If you changed `SKILL.md` or `templates/screenplay.md`, run `npm run build:singl
 
 Feature and fix pull requests leave the package version unchanged and add user-facing notes under `Unreleased` in `CHANGELOG.md`. Combine changes intended to ship together before choosing the release version.
 
-When preparing a release, raise the version once for the whole release:
+When preparing a release, a maintainer creates `release/<version>` from `develop`. This branch is the QA stage for that release; later work on `develop` is not automatically included. Make only release preparation and QA fixes on it. Raise the version once for the whole release:
 
 ```bash
-npm version patch    # fixes and wording
-npm version minor    # new guidance, new templates, new CLI options
-npm version major    # anything that changes how existing installs behave
+npm version patch --no-git-tag-version    # fixes and wording
+npm version minor --no-git-tag-version    # new guidance, new templates, new CLI options
+npm version major --no-git-tag-version    # incompatible changes
 ```
 
-`npm version` writes the number to `package.json`, `plugins/drama-writer/skills/drama-writer/VERSION`, `SKILL.md`, and both plugin manifests, and rebuilds generated files. Move the unreleased notes into a dated section for that version. Create the release tag and publish only when ready to release; use `--no-git-tag-version` if preparing the version in a release pull request.
+`npm version` writes the number to `package.json`, `plugins/drama-writer/skills/drama-writer/VERSION`, `SKILL.md`, and both plugin manifests, and rebuilds generated files. Move the included unreleased notes into a dated section for the version. After QA, open a pull request from the release branch to `main`. After approval and merge, tag the tested release commit and publish when ready. Also merge the release changes back into `develop`, preserving any newer `Unreleased` notes and QA fixes, so they are not lost from later releases.
+
+For an urgent fix to a released version, a maintainer can create a patch branch from the released tag on `main`, have the fix reviewed and tested, then release the patch. Bring the fix back into `develop` and any active release branch where it applies, without downgrading their versions.
 
 ## Changing the skill
 
