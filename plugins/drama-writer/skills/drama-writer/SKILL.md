@@ -28,6 +28,8 @@ Users can describe their goal in their own words; they do not need workflow or r
 | "Review / fix / punch up this" | E. Editorial review | Diagnosis ranked by impact, then the corrected text | `references/editorial-review.md` plus whichever craft files the problems touch |
 | "Continue", "next episode", existing project files | F. Continuation | New material that contradicts nothing established | `references/episode-continuity.md` first, then as for C or D |
 
+**Eleven v4 JSON voice direction.** When asked to prepare screenplay JSON for ElevenLabs v4, preserve the input structure and dialogue and add performance-directed `ttsText` to each spoken line. Follow `references/eleven-v4.md`; this is an output preparation workflow, not audio generation.
+
 If the request spans several workflows ("review this scene, then make it production-ready"), use the relevant guidance for each and carry out the requested steps. Ask before proceeding only when a decision or approval is necessary or the user requested a checkpoint. Do not add camera specs, shot IDs or TTS tags to a story or plain screenplay request.
 
 **Writing language.** Decide in this order:
@@ -122,6 +124,7 @@ Load only what the current task needs.
 - `references/character-development.md`: building characters, voice differentiation, consistency, relationship-driven behaviour.
 - `references/natural-dialogue.md`: spoken authenticity, subtext, multi-character scenes, AI-dialogue tells.
 - `references/multilingual-writing.md`: language selection, register, honorifics, regional varieties, localization, per-language notes.
+- `references/eleven-v4.md`: Eleven v4 performance direction and screenplay JSON integration.
 - `references/emotional-performance.md`: emotional credibility, restraint, writing for the voice, delivery sheets, performance tags, TTS provider differences.
 - `references/short-form-drama.md`: vertical-format pacing, retention, re-hooks, ending cuts, episode shapes, cliffhanger variety.
 - `references/visual-storytelling.md`: turning inner states into filmable behaviour, blocking, props, symbolism.

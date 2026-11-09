@@ -4,6 +4,9 @@ All notable changes to this project are documented here. The project follows [Se
 
 ## [Unreleased]
 
+### Added
+- ElevenLabs v4 voice direction for screenplay JSON, preserving dialogue while adding performance tags in `ttsText`.
+
 ## [1.2.0] - 2026-11-08
 
 ### Added
