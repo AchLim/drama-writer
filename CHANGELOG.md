@@ -4,6 +4,9 @@ All notable changes to this project are documented here. The project follows [Se
 
 ## [Unreleased]
 
+### Changed
+- Make Eleven v4 direction more expressive for emotionally charged dialogue, including vocal shifts and performance pauses.
+
 ### Added
 - ElevenLabs v4 voice direction for screenplay JSON, preserving dialogue while adding performance tags in `ttsText`.
 
