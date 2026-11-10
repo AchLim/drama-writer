@@ -1,6 +1,6 @@
 # <STORY TITLE>
 
-<One or two sentences about the story.>
+<One or two sentences about the story. Series title as the heading; upload titles live in the series bible.>
 
 **Progress:** <latest accepted episode or chapter; note any draft separately>
 **Next:** <next installment or decision>

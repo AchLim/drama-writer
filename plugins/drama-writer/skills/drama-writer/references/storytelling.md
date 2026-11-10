@@ -133,7 +133,7 @@ Deliver the core pleasure in every episode, at least a little. Combine genres de
 
 When asked for concepts, deliver for each:
 
-- **Title** (working).
+- **Title** (working): a series title that passes the plain-sentence test; see `references/titles.md`. Add upload titles when the user wants them.
 - **Logline**: one or two sentences, containing the mechanism.
 - **Genre and tone**, plus the core pleasure.
 - **Core conflict**: who wants what, against whom.
