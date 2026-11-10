@@ -1,6 +1,8 @@
 # Story outline: <TITLE>
 
 ## Concept
+- **Series title:**
+- **Upload title options:**
 - **Logline:**
 - **Genre and core pleasure:**
 - **Central dramatic question:**
