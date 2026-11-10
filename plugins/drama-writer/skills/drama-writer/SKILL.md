@@ -1,10 +1,10 @@
 ---
 name: drama-writer
 description: "Writes and edits short dramas for vertical and AI video in any language: premises, series bibles, episodes, natural dialogue, shot lists with continuity checks, and script review."
-when_to_use: "Use when the user wants to create, develop, continue, localize, or review a short drama, micro drama, vertical series episode, screenplay, scene, or dialogue: 15-second to 3-minute episodes for TikTok, YouTube Shorts, Reels, or short-drama apps, and scripts meant for AI video generation or text-to-speech. Also for series bibles, character profiles, hooks, twists, cliffhangers, runtime estimates, shot lists, and continuity checks. Works in any language, including English, Indonesian, Mandarin, Korean, Japanese, and Spanish."
+when_to_use: "Use when the user wants to create, develop, continue, localize, or review a short drama, micro drama, vertical series episode, screenplay, scene, dialogue, or existing screenplay JSON for TTS performance direction: 15-second to 3-minute episodes for TikTok, YouTube Shorts, Reels, or short-drama apps, and scripts meant for AI video generation or text-to-speech. Also for series titles and upload titles, series bibles, character profiles, hooks, twists, cliffhangers, runtime estimates, shot lists, and continuity checks. Works in any language, including English, Indonesian, Mandarin, Korean, Japanese, and Spanish."
 license: MIT
 metadata:
-  version: "1.2.0"
+  version: "1.3.0"
 ---
 
 # Drama Writer
@@ -27,6 +27,9 @@ Users can describe their goal in their own words; they do not need workflow or r
 | "Make it production-ready", shot list, prompts for AI video, TTS | D. Production screenplay | Scene IDs, shot IDs (if asked), location, time, cast present, visual action, dialogue, optional performance tags, continuity notes | `references/visual-storytelling.md`, `references/shot-continuity.md`, `references/ai-video-production.md`, `references/emotional-performance.md`, `templates/screenplay.md`, `templates/continuity-ledger.md` |
 | "Review / fix / punch up this" | E. Editorial review | Diagnosis ranked by impact, then the corrected text | `references/editorial-review.md` plus whichever craft files the problems touch |
 | "Continue", "next episode", existing project files | F. Continuation | New material that contradicts nothing established | `references/episode-continuity.md` first, then as for C or D |
+| "Give me a title", "make it catchy", caption or headline for an upload | G. Titles | A title pack: one series title and several upload titles, each stating who, what happened and the turn | `references/titles.md`; add `references/multilingual-writing.md` when the language is not English |
+
+**Eleven v4 JSON voice direction.** When asked to prepare screenplay JSON for ElevenLabs v4, preserve all original fields and dialogue exactly; add a separate `ttsText` field with inline performance tags to every spoken line, never to action-only objects. Make emotionally charged performances vivid, with meaningful shifts and reactions where the scene supports them. In `ttsText`, adapt punctuation and pauses for delivery while retaining the original spoken words. Apply this to any language and mixed-language dialogue. Follow `references/eleven-v4.md`; this is an output preparation workflow, not audio generation.
 
 If the request spans several workflows ("review this scene, then make it production-ready"), use the relevant guidance for each and carry out the requested steps. Ask before proceeding only when a decision or approval is necessary or the user requested a checkpoint. Do not add camera specs, shot IDs or TTS tags to a story or plain screenplay request.
 
@@ -118,10 +121,12 @@ Do a real editorial pass, silently, using `references/editorial-review.md`: stor
 Load only what the current task needs.
 
 - `references/storytelling.md`: premise design, dramatic question, stakes, hook engines and hook testing, genre promises.
+- `references/titles.md`: series titles vs upload titles, the plain-sentence test, title patterns, spoilers, language and platform, title packs.
 - `references/plot-structure.md`: setup to resolution, reversals, reveals, twist design, structures for each length.
 - `references/character-development.md`: building characters, voice differentiation, consistency, relationship-driven behaviour.
 - `references/natural-dialogue.md`: spoken authenticity, subtext, multi-character scenes, AI-dialogue tells.
 - `references/multilingual-writing.md`: language selection, register, honorifics, regional varieties, localization, per-language notes.
+- `references/eleven-v4.md`: Eleven v4 performance direction and screenplay JSON integration.
 - `references/emotional-performance.md`: emotional credibility, restraint, writing for the voice, delivery sheets, performance tags, TTS provider differences.
 - `references/short-form-drama.md`: vertical-format pacing, retention, re-hooks, ending cuts, episode shapes, cliffhanger variety.
 - `references/visual-storytelling.md`: turning inner states into filmable behaviour, blocking, props, symbolism.

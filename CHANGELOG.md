@@ -4,6 +4,15 @@ All notable changes to this project are documented here. The project follows [Se
 
 ## [Unreleased]
 
+## [1.3.0] - 2026-11-11
+
+### Changed
+- Make Eleven v4 direction more expressive for emotionally charged dialogue, including vocal shifts and performance pauses.
+
+### Added
+- Title guidance (`references/titles.md`): short series titles and longer upload titles, a plain-sentence test, common title patterns, how much a title may reveal, and per-language and per-platform notes. Concepts and the series bible and outline templates now include title fields.
+- ElevenLabs v4 voice direction for screenplay JSON, preserving dialogue while adding performance tags in `ttsText`.
+
 ## [1.2.0] - 2026-11-08
 
 ### Added

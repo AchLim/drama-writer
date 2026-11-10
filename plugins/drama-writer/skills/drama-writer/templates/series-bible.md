@@ -3,6 +3,8 @@
 > Story foundations and plans. Mark future plans clearly. Check accepted episodes for what actually happened, and update this file when the user authorizes changes.
 
 ## 1. Core
+- **Series title:** <role plus predicament, short; see references/titles.md>
+- **Upload title options:** <a few, each stating who, what happened and the turn>
 - **Logline:** <one or two sentences, including the mechanism>
 - **Premise:** <who, want, obstacle, stakes, why we care>
 - **Genre / core pleasure:** <e.g. revenge drama / watching the wronged outmanoeuvre the powerful>
