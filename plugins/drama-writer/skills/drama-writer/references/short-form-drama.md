@@ -111,7 +111,7 @@ Cliffhangers must:
 ## 8. Episode writing deliverables (Workflow C)
 
 When writing an episode, provide (briefly, then the script):
-1. **Episode objective**: the episode's dramatic question and what changes by the end.
+1. **Episode objective**: the episode's dramatic question and what changes by the end. For a series episode, also fill the short episode brief in `hooks-and-cliffhangers.md` §11 (cold-viewer line, double-duty detail, final image, next-episode question).
 2. **Opening hook**: the first image and line, and the viewer's want it feeds (see `storytelling.md` §5).
 3. **Beat progression**: a numbered list of 4–8 beats with approximate timecodes. Mark the re-hook beats and the beat where the next question opens.
 4. **Screenplay** in the template format, with dialogue.
@@ -133,3 +133,4 @@ Skip any element the user said they don't want.
 - The episode answers its question and then keeps going, with nothing new open.
 - The ending holds on the reaction until the tension is gone, so the viewer has no reason to tap "next".
 - Curiosity only: the viewer wonders what happens but doesn't care who it happens to.
+- A story that works on the page but not on screen: the context is in dialogue, the opening is setup, the middle repeats, and the ending pauses instead of changing something. See `hooks-and-cliffhangers.md`.

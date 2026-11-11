@@ -4,7 +4,7 @@ description: "Writes and edits short dramas for vertical and AI video in any lan
 when_to_use: "Use when the user wants to create, develop, continue, localize, or review a short drama, micro drama, vertical series episode, screenplay, scene, dialogue, or existing screenplay JSON for TTS performance direction: 15-second to 3-minute episodes for TikTok, YouTube Shorts, Reels, or short-drama apps, and scripts meant for AI video generation or text-to-speech. Also for series titles and upload titles, series bibles, character profiles, hooks, twists, cliffhangers, runtime estimates, shot lists, and continuity checks. Works in any language, including English, Indonesian, Mandarin, Korean, Japanese, and Spanish."
 license: MIT
 metadata:
-  version: "1.3.0"
+  version: "1.4.0"
 ---
 
 # Drama Writer
@@ -23,8 +23,8 @@ Users can describe their goal in their own words; they do not need workflow or r
 |---|---|---|---|
 | A loose idea, "give me concepts" | A. Concept | 1–3 sharp concepts: premise, genre, core conflict, leads, dramatic question, hook and its engine, the viewer's want, direction | `references/storytelling.md` |
 | An approved concept, "develop it", "plan the series" | B. Story development | Synopsis, character profiles, structure, plot points, reveals plan, payoff ladder, ending direction, episode breakdown, series bible | `references/plot-structure.md`, `references/character-development.md`, `templates/series-bible.md`, `templates/story-outline.md`, `templates/character-profile.md` |
-| "Write episode N", "write the scene" | C. Episode writing | Episode objective, hook, beat progression, screenplay with dialogue, ending beat | `references/short-form-drama.md`, `references/natural-dialogue.md`, `references/scene-construction.md`, `templates/episode-outline.md`, `templates/screenplay.md`; add `references/emotional-performance.md` when the script will be voiced |
-| "Make it production-ready", shot list, prompts for AI video, TTS | D. Production screenplay | Scene IDs, shot IDs (if asked), location, time, cast present, visual action, dialogue, optional performance tags, continuity notes | `references/visual-storytelling.md`, `references/shot-continuity.md`, `references/ai-video-production.md`, `references/emotional-performance.md`, `templates/screenplay.md`, `templates/continuity-ledger.md` |
+| "Write episode N", "write the scene" | C. Episode writing | Episode objective, hook, beat progression, screenplay with dialogue, ending beat | `references/short-form-drama.md`, `references/hooks-and-cliffhangers.md`, `references/natural-dialogue.md`, `references/scene-construction.md`, `templates/episode-outline.md`, `templates/screenplay.md`; add `references/emotional-performance.md` when the script will be voiced |
+| "Make it production-ready", shot list, prompts for AI video, TTS | D. Production screenplay | Scene IDs, shot IDs (if asked), location, time, cast present, visual action, dialogue, optional performance tags, continuity notes | `references/hooks-and-cliffhangers.md`, `references/visual-storytelling.md`, `references/shot-continuity.md`, `references/ai-video-production.md`, `references/emotional-performance.md`, `templates/screenplay.md`, `templates/continuity-ledger.md` |
 | "Review / fix / punch up this" | E. Editorial review | Diagnosis ranked by impact, then the corrected text | `references/editorial-review.md` plus whichever craft files the problems touch |
 | "Continue", "next episode", existing project files | F. Continuation | New material that contradicts nothing established | `references/episode-continuity.md` first, then as for C or D |
 | "Give me a title", "make it catchy", caption or headline for an upload | G. Titles | A title pack: one series title and several upload titles, each stating who, what happened and the turn | `references/titles.md`; add `references/multilingual-writing.md` when the language is not English |
@@ -58,7 +58,7 @@ These are ceilings, not targets. Silence, reactions and action take screen time 
 
 **Premise.** A premise names who, what they want, what blocks them, what it costs to fail, and the specific mechanism that makes this situation unlike the generic version. "A woman discovers her husband's secret" is a category. "A bridal-shop seamstress realises the wedding dress she is altering is for her own husband's second wedding, next Saturday" is a premise. See `references/storytelling.md`.
 
-**Hook.** The first 2–3 seconds must create a question the story actually answers. Start inside the situation, not before it. No hook may promise something the episode does not deliver. Curiosity alone holds a viewer for one episode; what makes them binge is wanting something to happen (to see the liar caught, the secret said aloud). Draft several hooks, test them, and stack curiosity with anticipation or desire. Open the next question before closing the current one, and end on the inhale, just before the answer. See `references/storytelling.md` §5, `references/short-form-drama.md` §4, and `examples/binge-hooks.md`.
+**Hook.** The first 2–3 seconds must create a question the story actually answers. Start inside the situation, not before it. No hook may promise something the episode does not deliver. Curiosity alone holds a viewer for one episode; what makes them binge is wanting something to happen (to see the liar caught, the secret said aloud). Draft several hooks, test them, and stack curiosity with anticipation or desire. Open the next question before closing the current one, and end on the inhale, just before the answer. A stranger must be able to say who, what relation, what wrong and what happens next from the first seconds with sound off; context comes from objects, positions and captions, not narration. Escalate every 10–20 seconds instead of repeating one beat, and end on a change the viewer can see plus one specific next question. See `references/hooks-and-cliffhangers.md`, `references/storytelling.md` §5, `references/short-form-drama.md` §4, and `examples/binge-hooks.md`.
 
 **Every beat earns its place.** Each beat advances plot, reveals character, raises tension, reveals information, lands an emotion, plants a needed visual, or pays something off. Cut beats that do none of these. Keep the quiet beat that lets an important moment land; pacing is not the same as speed.
 
@@ -97,8 +97,9 @@ Production mode adds IDs, precise staging, and continuity; it never adds padding
 2. For each shot state who is in frame, where they are, what they hold, and the single main action. Use the end state of one shot as the start state of the next.
 3. Give every cut a reason (reaction, reveal, new information, time jump, emphasis). Never repeat an action across a cut unless the repetition means something.
 4. Track props, hands, posture, facing, wardrobe, light and time of day in a continuity ledger (`templates/continuity-ledger.md`).
-5. Stage for what current AI video generators do well: few characters per shot, one main action, one camera move, simple hand work, short clips. Simplify how a key moment is shown before you consider cutting it. See `references/ai-video-production.md`.
-6. Before returning, run the continuity pass in `references/shot-continuity.md` over every adjacent pair of shots and **fix** what you find. Do not hand back a list of problems you could have solved.
+5. Protect the hook and ending through the shot list: shot 1 must carry the hook visual, the last shot must be the ending image, and the cold-viewer line must hold with sound off (`references/ai-video-production.md` §2b).
+6. Stage for what current AI video generators do well: few characters per shot, one main action, one camera move, simple hand work, short clips. Simplify how a key moment is shown before you consider cutting it. See `references/ai-video-production.md`.
+7. Before returning, run the continuity pass in `references/shot-continuity.md` over every adjacent pair of shots and **fix** what you find. Do not hand back a list of problems you could have solved.
 
 `examples/production-ready-scene.md` shows a complete production episode with ledger and runtime estimate.
 
@@ -128,6 +129,7 @@ Load only what the current task needs.
 - `references/multilingual-writing.md`: language selection, register, honorifics, regional varieties, localization, per-language notes.
 - `references/eleven-v4.md`: Eleven v4 performance direction and screenplay JSON integration.
 - `references/emotional-performance.md`: emotional credibility, restraint, writing for the voice, delivery sheets, performance tags, TTS provider differences.
+- `references/hooks-and-cliffhangers.md`: hook requirements, first-watch clarity for cold viewers, hook and cliffhanger patterns, hook-to-ending chain, the episode brief.
 - `references/short-form-drama.md`: vertical-format pacing, retention, re-hooks, ending cuts, episode shapes, cliffhanger variety.
 - `references/visual-storytelling.md`: turning inner states into filmable behaviour, blocking, props, symbolism.
 - `references/scene-construction.md`: scene goals, entering late, turns, scene geography, scene continuity.

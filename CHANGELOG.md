@@ -4,6 +4,12 @@ All notable changes to this project are documented here. The project follows [Se
 
 ## [Unreleased]
 
+## [1.4.0] - 2026-11-11
+
+### Added
+- Hook and cliffhanger craft (`references/hooks-and-cliffhangers.md`): first-watch clarity for cold viewers, hook and cliffhanger patterns, the hook-to-ending chain, escalation, and an episode brief. Loaded for episode writing and production.
+- AI video handoff guidance for keeping the hook image, orientation, escalation and ending image intact when a script becomes shots.
+
 ## [1.3.0] - 2026-11-11
 
 ### Changed
