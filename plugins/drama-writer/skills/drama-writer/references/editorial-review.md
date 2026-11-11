@@ -21,6 +21,9 @@ Two uses:
 - Does the hook work, and does the story deliver on it?
 - Does the hook pass the scroll, sound-off and specificity tests (`storytelling.md` §5)? Which engine does it run on: curiosity, anticipation, desire?
 - Can you finish the line "By now the viewer wants ___"? Does the episode pay part of it?
+- Cold-viewer test: from the first 8 seconds with no sound, can a stranger say who, what relation, what wrong, what happens next (`hooks-and-cliffhangers.md` §3)? Is context shown, not narrated?
+- Does each beat after the hook make things worse, tighter or costlier, or does one note repeat?
+- Is a detail planted in the opening and reinterpreted at the ending? Does the ending change the situation and pose one specific next question?
 - Does the story progress logically; does each beat cause the next?
 - Are the stakes meaningful, personal, and visible?
 - Are the characters' choices driving events (not coincidence)?
