@@ -32,6 +32,18 @@ Generators change quickly. The guidance below describes limitations common acros
 - **Reaction shots and inserts** carry emotion and information cheaply and reliably.
 - **Stillness**: a held look, a slow breath, a tear forming; generators often do subtle stillness better than complex motion.
 
+## 2b. Keep the hook, escalation and ending when the script becomes shots
+
+Splitting a good script into clips often flattens it: the opening becomes an establishing shot, context lives in lines the viewer cannot lip-sync, and the last clip is a reaction that releases the tension. Prevent this.
+
+- **Shot 1 is the hook image**, close on the person, object or anomaly (the signed certificate, the wrong floor number, the cufflink), not a wide of the location. Put the conflict in the first 2 to 3 seconds.
+- **Orientation in the first 5 to 8 seconds**: who the lead is, who they face, their relation, and who holds power, using visible markers (uniform, car, logo, ring, seating) and a short caption when needed. A cold viewer should pass the cold-viewer test in `hooks-and-cliffhangers.md` §3 with sound off.
+- **Story-critical information goes into the frame**: evidence as an insert with short, large text overlaid in editing (see §3), not as a spoken explanation.
+- **One new fact or pressure every 10 to 20 seconds.** If three shots in a row show the same emotion, replace one with an escalation: a new arrival, a revealed object, a closed exit.
+- **The double-duty detail** (the prop or mark planted early and reinterpreted at the end) gets its own insert shot both times, framed identically so the viewer recognises it.
+- **The last shot is the ending image**, cut on the inhale: the doors opening, the card slot lighting, the call connecting. Do not append a closing reaction that resolves the tension.
+- When writing the shot-prompt handoff, include the episode brief's hook, double-duty detail, final image and next-episode question in a header so every clip is generated toward the same turn.
+
 ## 3. What to be careful with
 
 | Risky | Why | Safer execution |
