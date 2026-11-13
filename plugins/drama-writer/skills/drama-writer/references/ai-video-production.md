@@ -12,6 +12,8 @@ Load for production-ready screenplays (Workflow D), shot lists, or whenever the 
 7. Shot descriptions for generation handoff
 8. Production checklist
 
+For generators with a roughly 15-second single-take window and native audio, and a brief for low-motion tension drama, use `low-motion-tension.md` for the beat structure and output format.
+
 Generators change quickly. The guidance below describes limitations common across current text- and image-to-video systems; when the user names a specific tool, ask about or follow its constraints (clip length, aspect ratio, reference-image support, audio).
 
 ## 1. What changes when the "camera" is a generator
