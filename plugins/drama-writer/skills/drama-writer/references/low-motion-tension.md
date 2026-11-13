@@ -37,6 +37,8 @@ Default to **15-second beats** for continuous dialogue and tension scenes. Use a
 
 - A short beat carries at most one spoken line, the hit that completes the turn.
 - Lengths can mix. Add real beat lengths to get timecodes, and keep the episode at 60 to 90 seconds. Short beats raise the beat count above 6 only when the runtime still fits.
+- **Beat lengths must add up to the requested runtime.** Sum them before returning. For 60 s, 15 + 15 + 15 + 15 works, and so does 15 + 15 + 10 + 10 + 10 if each short beat is a true transformation. When the sum misses, change a length; do not leave a note about it.
+- Use short beats sparingly: a before-and-after turn needs a visible first state and a visibly different last state. A beat that only continues the pressure stays at 15 s. One or two short beats per episode is typical.
 - Do not shorten a beat to save time. Shorten it because the turn is a snap.
 
 ## 2. The two-hander cast cap
@@ -119,7 +121,7 @@ Return the beat sheet from `templates/screenplay.md` (Beat sheet variant). It is
 
 ## 7. Checks before returning
 
-- Beats are 15 seconds, or 8 to 10 seconds where a before-and-after turn needs it; each is a single take with one camera behaviour; runtime is 60 to 90 seconds.
+- Beats are 15 seconds, or 8 to 10 seconds where a true before-and-after turn needs it; each is a single take with one camera behaviour; the beat lengths add up to the requested runtime exactly.
 - At most 2 main characters on screen, plus an optional off-screen narrator; no more than 6 reference images planned.
 - No line assumes an external audio file; every spoken line has inline vocal direction, and each character's voice descriptor is the same in every beat.
 - Beat 1 hooks inside 3 seconds with no setup.
