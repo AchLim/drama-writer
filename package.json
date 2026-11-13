@@ -1,6 +1,6 @@
 {
   "name": "@akoru/drama-writer",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "Claude Code skill for writing vertical short dramas and AI-video screenplays in any language, with an installer CLI.",
   "homepage": "https://github.com/AchLim/drama-writer#readme",
   "repository": {

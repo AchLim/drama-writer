@@ -176,5 +176,79 @@
     "rubric": "Reviews the supplied dialogue without rewriting, inventing missing context, or re-asking for the language, runtime, or requested type of help."
   },
   {"id": "18-eleven-v4-json", "title": "Eleven v4 screenplay JSON direction", "prompt": "Use the drama-writer skill to prepare this multilingual screenplay JSON for ElevenLabs v4. Preserve every field and line exactly, and add a separate ttsText field with performance tags to each spoken line. Return only JSON: {\"ep\":1,\"scenes\":[{\"sceneId\":\"S1\",\"flow\":[{\"action\":\"They smile.\"},{\"speaker\":\"C01\",\"line\":\"Are you serious?\",\"delivery\":\"curious, cheerful\"},{\"speaker\":\"C02\",\"line\":\"终于成功了！\",\"delivery\":\"relieved\"},{\"speaker\":\"C01\",\"line\":\"¡Lo logramos!\",\"delivery\":\"excited\"}]}]}", "checks": [{"type": "skill_activated"}, {"type": "regex", "pattern": "ttsText", "min": 3}, {"type": "not_regex", "pattern": "<break"}], "rubric": "Valid JSON preserves all original fields and exact lines in each language and script; each dialogue object has tagged ttsText, action has none, and performances are distinct and appropriate without SSML."},
-  {"id": "23-title-pack", "title": "Series and upload titles in Indonesian", "prompt": "Konsepnya: seorang kurir makanan salah mengantar pesanan ke ruang rapat, dan CEO yang terkenal galak ternyata pemesan sekaligus orang yang diam-diam mencarinya selama lima tahun. Tolong buatkan judul untuk seri ini dalam bahasa Indonesia: satu judul seri yang ringkas, dan beberapa judul unggahan yang panjang dan menarik perhatian untuk TikTok.", "checks": [{"type": "skill_activated"}, {"type": "script", "script": "latin"}, {"type": "regex", "pattern": "(kurir|CEO)", "flags": "i", "min": 3}, {"type": "not_regex", "pattern": "[\u2014]"}], "rubric": "Delivers one short series title and three to five upload titles in natural Indonesian, each telling a stranger who it is about, what happened and the turn; titles use different patterns, stay true to the premise, give away the mechanism or first reveal but not the final outcome, and avoid abstract mood titles. Emoji and hashtags are limited and fit TikTok."}
+  {"id": "23-title-pack", "title": "Series and upload titles in Indonesian", "prompt": "Konsepnya: seorang kurir makanan salah mengantar pesanan ke ruang rapat, dan CEO yang terkenal galak ternyata pemesan sekaligus orang yang diam-diam mencarinya selama lima tahun. Tolong buatkan judul untuk seri ini dalam bahasa Indonesia: satu judul seri yang ringkas, dan beberapa judul unggahan yang panjang dan menarik perhatian untuk TikTok.", "checks": [{"type": "skill_activated"}, {"type": "script", "script": "latin"}, {"type": "regex", "pattern": "(kurir|CEO)", "flags": "i", "min": 3}, {"type": "not_regex", "pattern": "[\u2014]"}], "rubric": "Delivers one short series title and three to five upload titles in natural Indonesian, each telling a stranger who it is about, what happened and the turn; titles use different patterns, stay true to the premise, give away the mechanism or first reveal but not the final outcome, and avoid abstract mood titles. Emoji and hashtags are limited and fit TikTok."},
+  {
+    "id": "24-low-motion-beat-sheet",
+    "title": "Low-motion tension beat sheet",
+    "prompt": "Write a 60-second low-motion, high-tension micro-drama for Gemini Omni 1.2 Flash (OF 1.2). English, vertical, one room, a whispered betrayal. I will pass the result to my video-prompt-director skill.",
+    "checks": [
+      {
+        "type": "skill_activated"
+      },
+      {
+        "type": "read_file",
+        "pattern": "low-motion-tension\\.md$"
+      },
+      {
+        "type": "regex",
+        "pattern": "Beat #",
+        "min": 1
+      },
+      {
+        "type": "regex",
+        "pattern": "\\[SFX:",
+        "min": 4
+      },
+      {
+        "type": "regex",
+        "pattern": "\\((?:VO|ON-CAM)\\)\\s*\\[[^\\]]+\\]\\s*:",
+        "min": 3
+      }
+    ],
+    "rubric": "A table with the five columns Beat # | Timecode | Visual/Subtext Action | Spoken/VO Dialogue | SFX & Audio Cue. 4 to 6 beats of 15 s (8 to 10 s only for a before-and-after turn), timecodes add up to about 60 s. Beat 1 hooks within 3 s with no exposition. At most 2 on-screen characters. No running, fights or choreography. About 70% voiceover and 30% on-camera by words, on-camera lines saved for peak tension. Every spoken line has inline vocal direction before the words and no line assumes an uploaded audio file. An SFX cue in every beat. Final beat ends on a sharp line or visible change. Plain English, no idioms."
+  },
+  {
+    "id": "25-low-motion-cast-cap",
+    "title": "Low-motion mode holds the two-character cap",
+    "prompt": "Low-motion tension micro-drama for OF 1.2, 60 seconds: three siblings in their late father's study, one of them has been lying about the will. Beat sheet please.",
+    "checks": [
+      {
+        "type": "skill_activated"
+      },
+      {
+        "type": "regex",
+        "pattern": "Beat #",
+        "min": 1
+      },
+      {
+        "type": "regex",
+        "pattern": "\\[SFX:",
+        "min": 4
+      }
+    ],
+    "rubric": "Keeps at most 2 main characters on screen plus an optional off-screen narrator, and says how the third sibling is handled (a voice on a phone, a name on screen, an absence) instead of showing a third face. Lists at most 6 reference images in the header. No group choreography."
+  },
+  {
+    "id": "26-low-motion-not-default",
+    "title": "Low-motion mode is not applied unasked",
+    "prompt": "Write a 60-second vertical episode in English where a bridal-shop seamstress realises the dress she is altering is for her own husband's second wedding. Standard screenplay format.",
+    "checks": [
+      {
+        "type": "skill_activated"
+      },
+      {
+        "type": "not_regex",
+        "pattern": "Beat #\\s*\\|"
+      },
+      {
+        "type": "not_regex",
+        "pattern": "\\[SFX:"
+      },
+      {
+        "type": "speakers",
+        "min": 2
+      }
+    ],
+    "rubric": "Written in the standard screenplay format with scene headings and speaker lines. Does not switch to a 15-second beat table, SFX cues or a two-character cap because the user never asked for the low-motion mode."
+  }
 ]
