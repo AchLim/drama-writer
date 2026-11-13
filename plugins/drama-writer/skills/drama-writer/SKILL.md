@@ -31,6 +31,8 @@ Users can describe their goal in their own words; they do not need workflow or r
 
 **Eleven v4 JSON voice direction.** When asked to prepare screenplay JSON for ElevenLabs v4, preserve all original fields and dialogue exactly; add a separate `ttsText` field with inline performance tags to every spoken line, never to action-only objects. Make emotionally charged performances vivid, with meaningful shifts and reactions where the scene supports them. In `ttsText`, adapt punctuation and pauses for delivery while retaining the original spoken words. Apply this to any language and mixed-language dialogue. Follow `references/eleven-v4.md`; this is an output preparation workflow, not audio generation.
 
+**Low-motion tension mode (opt-in).** When the user asks for low-motion, high-tension micro-dramas, names Gemini Omni 1.2 Flash ("OF 1.2") or a generator with a roughly 15-second single-take window and native audio, or wants a beat sheet for `video-prompt-director`, apply `references/low-motion-tension.md` on top of Workflow C or D. It changes only pacing (15-second beats, or 8 to 10 seconds for before-and-after turns), staging (stillness, no fast action, a cap of 2 main characters), the dialogue split (about 70% voiceover, 30% on-camera), inline vocal direction on every spoken line with no external audio assumed, SFX cues in every beat, and the output (the Beat sheet variant in `templates/screenplay.md`). Genre, premise and series rules stay in force. Never apply it unasked.
+
 If the request spans several workflows ("review this scene, then make it production-ready"), use the relevant guidance for each and carry out the requested steps. Ask before proceeding only when a decision or approval is necessary or the user requested a checkpoint. Do not add camera specs, shot IDs or TTS tags to a story or plain screenplay request.
 
 **Writing language.** Decide in this order:
@@ -128,6 +130,7 @@ Load only what the current task needs.
 - `references/natural-dialogue.md`: spoken authenticity, subtext, multi-character scenes, AI-dialogue tells.
 - `references/multilingual-writing.md`: language selection, register, honorifics, regional varieties, localization, per-language notes.
 - `references/eleven-v4.md`: Eleven v4 performance direction and screenplay JSON integration.
+- `references/low-motion-tension.md`: opt-in mode for single-take beats (15 s, or 8 to 10 s for before-and-after turns), the two-character cap, stillness over action, the 70/30 voiceover to on-camera split, inline vocal direction, SFX cues, and the five-column beat sheet.
 - `references/emotional-performance.md`: emotional credibility, restraint, writing for the voice, delivery sheets, performance tags, TTS provider differences.
 - `references/hooks-and-cliffhangers.md`: hook requirements, first-watch clarity for cold viewers, hook and cliffhanger patterns, hook-to-ending chain, the episode brief.
 - `references/short-form-drama.md`: vertical-format pacing, retention, re-hooks, ending cuts, episode shapes, cliffhanger variety.
@@ -138,5 +141,5 @@ Load only what the current task needs.
 - `references/ai-video-production.md`: generation-friendly staging, character consistency, shot-prompt handoff.
 - `references/runtime-timing.md`: speech rates by language, delivery modifiers, runtime budgeting.
 - `references/editorial-review.md`: the full self-review and the review/rewrite workflow.
-- `templates/`: project overview, story state, episode index and record, series bible, character profile, outlines, screenplay, continuity ledger.
-- `examples/`: natural dialogue across languages, weak vs strong storytelling, hooks and ending cuts with a payoff ladder, flat vs performed voice delivery, a full production-ready episode.
+- `templates/`: project overview, story state, episode index and record, series bible, character profile, outlines, screenplay (Standard, Production, Beat sheet), continuity ledger.
+- `examples/`: natural dialogue across languages, weak vs strong storytelling, hooks and ending cuts with a payoff ladder, flat vs performed voice delivery, a full production-ready episode, a 60-second low-motion beat sheet (`examples/low-motion-beat-sheet.md`).

@@ -4,6 +4,9 @@ All notable changes to this project are documented here. The project follows [Se
 
 ## [Unreleased]
 
+### Added
+- Opt-in low-motion tension mode for AI micro-dramas (`references/low-motion-tension.md`): 15-second single-take beats (8 to 10 seconds for before-and-after turns), a two-character cast cap with an optional off-screen narrator and at most 6 reference images, stillness instead of fast action, a 70/30 voiceover to on-camera dialogue split, inline vocal direction on every spoken line with no external audio assumed, SFX cues in every beat, and a five-column beat sheet (new Beat sheet variant in `templates/screenplay.md`) for `video-prompt-director`. Includes a worked example.
+
 ## [1.4.0] - 2026-11-11
 
 ### Added
