@@ -250,5 +250,28 @@
       }
     ],
     "rubric": "Written in the standard screenplay format with scene headings and speaker lines. Does not switch to a 15-second beat table, SFX cues or a two-character cap because the user never asked for the low-motion mode."
+  },
+  {
+    "id": "27-serial-pitch-pack",
+    "title": "Serial pitch synopsis pack",
+    "prompt": "Draft the synopsis pack, in English, for Episodes 1 to 5 of a series: a bridal-shop seamstress realises the wedding dress she is altering is for her own husband's second wedding, next Saturday. I want to submit it to a short-drama festival.",
+    "checks": [
+      { "type": "skill_activated" },
+      { "type": "script", "script": "latin" },
+      { "type": "regex", "pattern": "EP\\.?\\s*0?[1-5]", "flags": "i", "min": 5 },
+      { "type": "not_regex", "pattern": "(^|\\n)#+\\s*S\\d{2}\\s*-\\s*(INT|EXT)" }
+    ],
+    "rubric": "Delivers a pack, not a script: logline, 2 to 4 characters with wants, overall story, five episode synopses, no scene or shot IDs, no free/paid tags or paywall block the user did not ask for. Every episode has a concrete event and a written ending, the endings feed the next episode's opening, the endings vary in type; Episode 1 opens on a concrete crisis. No abstract lines like 'they grow closer'."
+  },
+  {
+    "id": "28-serial-pitch-not-default",
+    "title": "Serial pitch mode is not applied unasked",
+    "prompt": "Write episode 1 of a 60-second vertical drama in English where a bridal-shop seamstress realises the dress she is altering is for her own husband's second wedding. Standard screenplay format.",
+    "checks": [
+      { "type": "skill_activated" },
+      { "type": "not_regex", "pattern": "Overall story|Ending / cliffhanger", "flags": "i" },
+      { "type": "speakers", "min": 2 }
+    ],
+    "rubric": "A standard screenplay with scene headings and speaker lines. It does not turn into a synopsis pack with an overall story and per-episode endings, because the user never asked for a serial pitch."
   }
 ]
