@@ -4,6 +4,10 @@ All notable changes to this project are documented here. The project follows [Se
 
 ## [Unreleased]
 
+### Added
+- Opt-in serial pitch mode (Workflow H, `references/serial-pitch.md`) for drafting a multi-episode story as a synopsis pack: a drafting order from logline to episode entries, concrete events only, a chain check so each ending feeds the next opening, five ending types, and escalation across the pack. Adds a pack template (`templates/serial-pitch.md`) and a worked example.
+- Eval scenarios 27 and 28 for the new mode: the synopsis pack, and a guard that it is never applied unasked.
+
 ## [1.5.0] - 2026-11-14
 
 ### Added
