@@ -129,7 +129,7 @@ Do not reverse every scene. A string of reversals with no consequences becomes n
 - Pay something every episode, even if it is small: a win, a look, a door closing on the villain.
 - Before a full payoff, raise the price of it: the closer the exposure, the more the protagonist has to lose by making it.
 - After a full payoff, open a bigger want straight away (the exposure reveals someone worse). A series with no unpaid want left ends there, whatever the episode count says.
-- On short-drama apps with a paywall, the episode just before it should end on the series' strongest anticipation so far, built from what came before, not a stunt invented for the moment.
+- On short-drama apps with a paywall, the episode just before it should end on the series' strongest anticipation so far, built from what came before, not a stunt invented for the moment. For drafting a multi-episode pack see `references/serial-pitch.md`.
 
 **Resolution.** A series ending must answer the central question, show the cost, and show who the characters are now. Avoid the generic inspirational close ("and she learned that true strength comes from within"). Prefer a concrete image that proves the change.
 
